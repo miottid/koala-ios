@@ -7,22 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580AAE321E9813170083D0CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 580AAE341E9813170083D0CC /* Localizable.strings */; };
+		5814A1B51E980EE0000A604A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5814A1B41E980EE0000A604A /* SettingsVC.swift */; };
 		58AE54DC1E97FC4400B6DC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54DB1E97FC4400B6DC2F /* AppDelegate.swift */; };
-		58AE54DE1E97FC4400B6DC2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54DD1E97FC4400B6DC2F /* ViewController.swift */; };
-		58AE54E11E97FC4400B6DC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54DF1E97FC4400B6DC2F /* Main.storyboard */; };
+		58AE54DE1E97FC4400B6DC2F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54DD1E97FC4400B6DC2F /* MainVC.swift */; };
 		58AE54E31E97FC4400B6DC2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54E21E97FC4400B6DC2F /* Assets.xcassets */; };
 		58AE54E61E97FC4400B6DC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54E41E97FC4400B6DC2F /* LaunchScreen.storyboard */; };
+		58AE54F31E98051C00B6DC2F /* IntensityCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54F21E98051C00B6DC2F /* IntensityCircleView.swift */; };
+		58AE54FA1E98097900B6DC2F /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54F51E98097900B6DC2F /* Poppins-Bold.ttf */; };
+		58AE54FB1E98097900B6DC2F /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54F61E98097900B6DC2F /* Poppins-Light.ttf */; };
+		58AE54FC1E98097900B6DC2F /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54F71E98097900B6DC2F /* Poppins-Medium.ttf */; };
+		58AE54FD1E98097900B6DC2F /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54F81E98097900B6DC2F /* Poppins-Regular.ttf */; };
+		58AE54FE1E98097900B6DC2F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54F91E98097900B6DC2F /* Poppins-SemiBold.ttf */; };
+		58AE55001E9809EF00B6DC2F /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54FF1E9809EF00B6DC2F /* StyleSheet.swift */; };
 		FF498BF8C44CE175901B58F8 /* Pods_Koala.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7E162027FB2807504D0B2B /* Pods_Koala.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		580AAE2E1E98116F0083D0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		580AAE331E9813170083D0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		580AAE351E9813180083D0CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		580AAE361E9813190083D0CC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5814A1B41E980EE0000A604A /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		58AE54D81E97FC4400B6DC2F /* Koala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koala.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58AE54DB1E97FC4400B6DC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		58AE54DD1E97FC4400B6DC2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		58AE54E01E97FC4400B6DC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		58AE54DD1E97FC4400B6DC2F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		58AE54E21E97FC4400B6DC2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		58AE54E51E97FC4400B6DC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58AE54E71E97FC4400B6DC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58AE54F21E98051C00B6DC2F /* IntensityCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntensityCircleView.swift; sourceTree = "<group>"; };
+		58AE54F51E98097900B6DC2F /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		58AE54F61E98097900B6DC2F /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		58AE54F71E98097900B6DC2F /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		58AE54F81E98097900B6DC2F /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		58AE54F91E98097900B6DC2F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		58AE54FF1E9809EF00B6DC2F /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
 		9C7E162027FB2807504D0B2B /* Pods_Koala.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Koala.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A727B7E0BF7CB4EBB7558939 /* Pods-Koala.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koala.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koala/Pods-Koala.debug.xcconfig"; sourceTree = "<group>"; };
 		E12A09EF0D5F5724A79C4613 /* Pods-Koala.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koala.release.xcconfig"; path = "Pods/Target Support Files/Pods-Koala/Pods-Koala.release.xcconfig"; sourceTree = "<group>"; };
@@ -40,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		580AAE2F1E9812B20083D0CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				58AE54DD1E97FC4400B6DC2F /* MainVC.swift */,
+				5814A1B41E980EE0000A604A /* SettingsVC.swift */,
+				58AE54F11E98050700B6DC2F /* IntensityCircle */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		58AE54CF1E97FC4400B6DC2F = {
 			isa = PBXGroup;
 			children = (
@@ -61,14 +89,36 @@
 		58AE54DA1E97FC4400B6DC2F /* Koala */ = {
 			isa = PBXGroup;
 			children = (
+				58AE54FF1E9809EF00B6DC2F /* StyleSheet.swift */,
 				58AE54DB1E97FC4400B6DC2F /* AppDelegate.swift */,
-				58AE54DD1E97FC4400B6DC2F /* ViewController.swift */,
-				58AE54DF1E97FC4400B6DC2F /* Main.storyboard */,
+				580AAE2F1E9812B20083D0CC /* Controllers */,
+				58AE54F41E98097900B6DC2F /* Fonts */,
 				58AE54E21E97FC4400B6DC2F /* Assets.xcassets */,
 				58AE54E41E97FC4400B6DC2F /* LaunchScreen.storyboard */,
 				58AE54E71E97FC4400B6DC2F /* Info.plist */,
+				580AAE341E9813170083D0CC /* Localizable.strings */,
 			);
 			path = Koala;
+			sourceTree = "<group>";
+		};
+		58AE54F11E98050700B6DC2F /* IntensityCircle */ = {
+			isa = PBXGroup;
+			children = (
+				58AE54F21E98051C00B6DC2F /* IntensityCircleView.swift */,
+			);
+			name = IntensityCircle;
+			sourceTree = "<group>";
+		};
+		58AE54F41E98097900B6DC2F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				58AE54F51E98097900B6DC2F /* Poppins-Bold.ttf */,
+				58AE54F61E98097900B6DC2F /* Poppins-Light.ttf */,
+				58AE54F71E98097900B6DC2F /* Poppins-Medium.ttf */,
+				58AE54F81E98097900B6DC2F /* Poppins-Regular.ttf */,
+				58AE54F91E98097900B6DC2F /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		CBD22133DF88E6D4F81BF312 /* Frameworks */ = {
@@ -135,6 +185,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 58AE54CF1E97FC4400B6DC2F;
 			productRefGroup = 58AE54D91E97FC4400B6DC2F /* Products */;
@@ -152,8 +203,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				58AE54E61E97FC4400B6DC2F /* LaunchScreen.storyboard in Resources */,
+				58AE54FB1E98097900B6DC2F /* Poppins-Light.ttf in Resources */,
+				58AE54FD1E98097900B6DC2F /* Poppins-Regular.ttf in Resources */,
 				58AE54E31E97FC4400B6DC2F /* Assets.xcassets in Resources */,
-				58AE54E11E97FC4400B6DC2F /* Main.storyboard in Resources */,
+				58AE54FC1E98097900B6DC2F /* Poppins-Medium.ttf in Resources */,
+				580AAE321E9813170083D0CC /* Localizable.strings in Resources */,
+				58AE54FE1E98097900B6DC2F /* Poppins-SemiBold.ttf in Resources */,
+				58AE54FA1E98097900B6DC2F /* Poppins-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,26 +268,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58AE54DE1E97FC4400B6DC2F /* ViewController.swift in Sources */,
+				58AE54F31E98051C00B6DC2F /* IntensityCircleView.swift in Sources */,
+				58AE55001E9809EF00B6DC2F /* StyleSheet.swift in Sources */,
+				58AE54DE1E97FC4400B6DC2F /* MainVC.swift in Sources */,
 				58AE54DC1E97FC4400B6DC2F /* AppDelegate.swift in Sources */,
+				5814A1B51E980EE0000A604A /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		58AE54DF1E97FC4400B6DC2F /* Main.storyboard */ = {
+		580AAE341E9813170083D0CC /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				58AE54E01E97FC4400B6DC2F /* Base */,
+				580AAE331E9813170083D0CC /* Base */,
+				580AAE351E9813180083D0CC /* en */,
+				580AAE361E9813190083D0CC /* fr */,
 			);
-			name = Main.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		58AE54E41E97FC4400B6DC2F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				58AE54E51E97FC4400B6DC2F /* Base */,
+				580AAE2E1E98116F0083D0CC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -243,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -294,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -340,10 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B58NS3SSSN;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Koala/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = muxumuxu.Koala;
@@ -358,10 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B58NS3SSSN;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Koala/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = muxumuxu.Koala;

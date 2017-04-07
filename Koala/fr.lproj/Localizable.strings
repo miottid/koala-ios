@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Koala
+
+  Created by David Miotti on 07/04/2017.
+  Copyright © 2017 Muxu.Muxu. All rights reserved.
+*/
+// AUTO-GENERATED
+"settings" = "Paramètres";
+"help" = "Instructions";
+"settings.close" = "Fermer";
+"session.start" = "Démarrer";
