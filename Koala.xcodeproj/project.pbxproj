@@ -12,6 +12,7 @@
 		58AE54E11E97FC4400B6DC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54DF1E97FC4400B6DC2F /* Main.storyboard */; };
 		58AE54E31E97FC4400B6DC2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54E21E97FC4400B6DC2F /* Assets.xcassets */; };
 		58AE54E61E97FC4400B6DC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54E41E97FC4400B6DC2F /* LaunchScreen.storyboard */; };
+		58AE54EF1E97FDCF00B6DC2F /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE54EE1E97FDCF00B6DC2F /* SnapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		58AE54E21E97FC4400B6DC2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58AE54E51E97FC4400B6DC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58AE54E71E97FC4400B6DC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58AE54EE1E97FDCF00B6DC2F /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58AE54EF1E97FDCF00B6DC2F /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				58AE54DA1E97FC4400B6DC2F /* Koala */,
+				58AE54ED1E97FDC200B6DC2F /* Thirdparties */,
 				58AE54D91E97FC4400B6DC2F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +68,14 @@
 			path = Koala;
 			sourceTree = "<group>";
 		};
+		58AE54ED1E97FDC200B6DC2F /* Thirdparties */ = {
+			isa = PBXGroup;
+			children = (
+				58AE54EE1E97FDCF00B6DC2F /* SnapKit.framework */,
+			);
+			name = Thirdparties;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +86,7 @@
 				58AE54D41E97FC4400B6DC2F /* Sources */,
 				58AE54D51E97FC4400B6DC2F /* Frameworks */,
 				58AE54D61E97FC4400B6DC2F /* Resources */,
+				58AE54F01E97FDF700B6DC2F /* Carthage copy frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +144,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58AE54F01E97FDF700B6DC2F /* Carthage copy frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			name = "Carthage copy frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58AE54D41E97FC4400B6DC2F /* Sources */ = {
@@ -264,6 +295,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B58NS3SSSN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Koala/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = muxumuxu.Koala;
@@ -277,6 +312,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B58NS3SSSN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Koala/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = muxumuxu.Koala;
