@@ -14,3 +14,6 @@
 "settings.rate" = "Rate the app";
 "settings.share" = "Share the app";
 "session.stop" = "Stop";
+"session.type.title" = "New session";
+"session.type.eight_mins" = "8 min";
+"session.type.twenty_mins" = "20 min";

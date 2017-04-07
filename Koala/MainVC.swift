@@ -24,6 +24,9 @@ final class MainVC: UIViewController {
     
     private var colorPickerImageView: UIImageView!
     private var colorPickerSlider: UISlider!
+    
+    private var dimmingBtn: UIButton!
+    private var actionSheet: KoalaActionSheet!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,22 +58,20 @@ final class MainVC: UIViewController {
         view.addSubview(startBtn)
         colorPickerImageView = UIImageView(image: #imageLiteral(resourceName: "color_picker"))
         view.addSubview(colorPickerImageView)
-        colorPickerImageView.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(10)
-            $0.right.equalToSuperview().inset(10)
-            $0.height.equalTo(40)
-            $0.bottom.equalToSuperview().inset(7)
-        }
         colorPickerSlider = UISlider()
         let emptyImasge = UIImage()
         colorPickerSlider.setMaximumTrackImage(emptyImasge, for: .normal)
         colorPickerSlider.setMinimumTrackImage(emptyImasge, for: .normal)
         view.addSubview(colorPickerSlider)
-        colorPickerSlider.snp.makeConstraints {
-            $0.edges.equalTo(colorPickerImageView)
-        }
         colorPickerSlider.setThumbImage(#imageLiteral(resourceName: "progress_thumb"), for: .normal)
         colorPickerSlider.addTarget(self, action: #selector(sliderDidChange(_:)), for: .valueChanged)
+        dimmingBtn = UIButton(type: .system)
+        dimmingBtn.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        dimmingBtn.alpha = 0
+        dimmingBtn.addTarget(self, action: #selector(tappedDismissBtn(_:)), for: .touchUpInside)
+        view.addSubview(dimmingBtn)
+        actionSheet = KoalaActionSheet()
+        view.addSubview(actionSheet)
         configureLayoutConstraints()
         
         colorPickerSlider.value = 0.463768
@@ -101,7 +102,22 @@ final class MainVC: UIViewController {
                 $0.bottom.equalToSuperview().offset(100)
             }
             
+            actionSheet.title = L("session.type.title")
+            actionSheet.leftBtnTitle = L("session.type.eight_mins")
+            actionSheet.rightBtnTitle = L("session.type.twenty_mins")
+            let dismissBlock: (Void) -> Void = {
+                self.tappedStartBtn(self.startBtn)
+            }
+            actionSheet.leftBtnBlock = dismissBlock
+            actionSheet.rightBtnBlock = dismissBlock
+            actionSheet.snp.updateConstraints {
+                $0.bottom.equalToSuperview().inset(20)
+            }
+            
+            animatePulse()
+            
             UIView.animate(withDuration: 0.35) {
+                self.dimmingBtn.alpha = 1
                 self.view.layoutIfNeeded()
             }
             
@@ -122,7 +138,16 @@ final class MainVC: UIViewController {
                 $0.bottom.equalToSuperview().inset(7)
             }
             
+            actionSheet.snp.updateConstraints {
+                $0.bottom.equalToSuperview().offset(150)
+            }
+            
+            self.intensityCircleView.layer.removeAllAnimations()
+            
             UIView.animate(withDuration: 0.35) {
+                self.intensityCircleView.transform = CGAffineTransform.identity
+                self.dimmingBtn.alpha = 0
+                self.actionSheet.layoutIfNeeded()
                 self.view.layoutIfNeeded()
             }
             
@@ -130,12 +155,33 @@ final class MainVC: UIViewController {
         }
     }
     
+    func tappedDismissBtn(_ sender: UIButton) {
+        tappedStartBtn(startBtn)
+    }
+    
     func sliderDidChange(_ slider: UISlider) {
         updateColor(for: slider.value.toCGFloat)
     }
     
+    private func animatePulse() {
+        UIView.animate(withDuration: 0.35, animations: { 
+            self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        }) { finished in
+            let scaleAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+            scaleAnimation.duration = 1.5
+            scaleAnimation.repeatCount = 100
+            scaleAnimation.autoreverses = true
+            scaleAnimation.fromValue = 0.7;
+            scaleAnimation.toValue = 0.6;
+    //        scaleAnimation.fromValue = 1.05;
+    //        scaleAnimation.toValue = 0.95;
+            self.intensityCircleView.layer.add(scaleAnimation, forKey: "scale")
+        }
+    }
+    
     private func updateColor(for progress: CGFloat) {
-        let point = CGPoint(x: colorPickerImageView.bounds.width * progress,
+        let p = min(progress, 0.97)
+        let point = CGPoint(x: colorPickerImageView.bounds.width * p,
                             y: colorPickerImageView.bounds.height / 2.0)
         let color = colorPickerImageView.pickColor(at: point)
         intensityCircleView.color = color
@@ -169,6 +215,26 @@ final class MainVC: UIViewController {
         intensityCircleView.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
             $0.width.height.equalTo(view.snp.width).multipliedBy(0.70)
+        }
+        dimmingBtn.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        actionSheet.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(20)
+            $0.right.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().offset(150)
+        }
+        colorPickerImageView.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(10)
+            $0.right.equalToSuperview().inset(10)
+            $0.height.equalTo(34)
+            $0.bottom.equalToSuperview().inset(12)
+        }
+        colorPickerSlider.snp.makeConstraints {
+            $0.left.equalTo(colorPickerImageView)
+            $0.right.equalTo(colorPickerImageView)
+            $0.centerY.equalTo(colorPickerImageView)
+            $0.height.equalTo(40)
         }
     }
 }

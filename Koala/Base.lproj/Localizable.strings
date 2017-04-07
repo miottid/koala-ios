@@ -14,3 +14,6 @@
 "settings.rate" = "Noter l'application";
 "settings.share" = "Partager l'application";
 "session.stop" = "Arrêter";
+"session.type.title" = "Nouvelle session";
+"session.type.eight_mins" = "8 min";
+"session.type.twenty_mins" = "20 min";
