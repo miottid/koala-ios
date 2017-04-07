@@ -1,0 +1,36 @@
+PODS:
+  - SnapKit (3.2.0)
+  - SwiftHelpers (5.0.1):
+    - SwiftHelpers/Basic (= 5.0.1)
+    - SwiftHelpers/Core (= 5.0.1)
+    - SwiftHelpers/CoreData (= 5.0.1)
+    - SwiftHelpers/DateTime (= 5.0.1)
+    - SwiftHelpers/Misc (= 5.0.1)
+    - SwiftHelpers/UI (= 5.0.1)
+  - SwiftHelpers/Basic (5.0.1)
+  - SwiftHelpers/Core (5.0.1)
+  - SwiftHelpers/CoreData (5.0.1)
+  - SwiftHelpers/DateTime (5.0.1)
+  - SwiftHelpers/Misc (5.0.1)
+  - SwiftHelpers/UI (5.0.1)
+
+DEPENDENCIES:
+  - SnapKit
+  - SwiftHelpers (from `https://github.com/dmiotti/SwiftHelpers`)
+
+EXTERNAL SOURCES:
+  SwiftHelpers:
+    :git: https://github.com/dmiotti/SwiftHelpers
+
+CHECKOUT OPTIONS:
+  SwiftHelpers:
+    :commit: f5a2f7dc87ec29db74eb486009ee3f44ceab6c61
+    :git: https://github.com/dmiotti/SwiftHelpers
+
+SPEC CHECKSUMS:
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftHelpers: 346de9223bfde9b2011c866af3dcf3e9d70d9c41
+
+PODFILE CHECKSUM: fb8e831757d6077eb664d2914b41d45de1cc8212
+
+COCOAPODS: 1.2.0

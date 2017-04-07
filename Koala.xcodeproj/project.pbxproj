@@ -12,7 +12,7 @@
 		58AE54E11E97FC4400B6DC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54DF1E97FC4400B6DC2F /* Main.storyboard */; };
 		58AE54E31E97FC4400B6DC2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54E21E97FC4400B6DC2F /* Assets.xcassets */; };
 		58AE54E61E97FC4400B6DC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AE54E41E97FC4400B6DC2F /* LaunchScreen.storyboard */; };
-		58AE54EF1E97FDCF00B6DC2F /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE54EE1E97FDCF00B6DC2F /* SnapKit.framework */; };
+		FF498BF8C44CE175901B58F8 /* Pods_Koala.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7E162027FB2807504D0B2B /* Pods_Koala.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,9 @@
 		58AE54E21E97FC4400B6DC2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58AE54E51E97FC4400B6DC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58AE54E71E97FC4400B6DC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58AE54EE1E97FDCF00B6DC2F /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		9C7E162027FB2807504D0B2B /* Pods_Koala.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Koala.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A727B7E0BF7CB4EBB7558939 /* Pods-Koala.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koala.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koala/Pods-Koala.debug.xcconfig"; sourceTree = "<group>"; };
+		E12A09EF0D5F5724A79C4613 /* Pods-Koala.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koala.release.xcconfig"; path = "Pods/Target Support Files/Pods-Koala/Pods-Koala.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58AE54EF1E97FDCF00B6DC2F /* SnapKit.framework in Frameworks */,
+				FF498BF8C44CE175901B58F8 /* Pods_Koala.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +44,9 @@
 			isa = PBXGroup;
 			children = (
 				58AE54DA1E97FC4400B6DC2F /* Koala */,
-				58AE54ED1E97FDC200B6DC2F /* Thirdparties */,
 				58AE54D91E97FC4400B6DC2F /* Products */,
+				D2E7568666D024EC1B25E1EB /* Pods */,
+				CBD22133DF88E6D4F81BF312 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,12 +71,21 @@
 			path = Koala;
 			sourceTree = "<group>";
 		};
-		58AE54ED1E97FDC200B6DC2F /* Thirdparties */ = {
+		CBD22133DF88E6D4F81BF312 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				58AE54EE1E97FDCF00B6DC2F /* SnapKit.framework */,
+				9C7E162027FB2807504D0B2B /* Pods_Koala.framework */,
 			);
-			name = Thirdparties;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2E7568666D024EC1B25E1EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A727B7E0BF7CB4EBB7558939 /* Pods-Koala.debug.xcconfig */,
+				E12A09EF0D5F5724A79C4613 /* Pods-Koala.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,10 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58AE54EA1E97FC4400B6DC2F /* Build configuration list for PBXNativeTarget "Koala" */;
 			buildPhases = (
+				EF83D7834DB1F92D8B4BDC8C /* [CP] Check Pods Manifest.lock */,
 				58AE54D41E97FC4400B6DC2F /* Sources */,
 				58AE54D51E97FC4400B6DC2F /* Frameworks */,
 				58AE54D61E97FC4400B6DC2F /* Resources */,
-				58AE54F01E97FDF700B6DC2F /* Carthage copy frameworks */,
+				CAF2F9F9F86EB0A5CAA8B56C /* [CP] Embed Pods Frameworks */,
+				EE27B76199DF2E202D1222B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,20 +160,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		58AE54F01E97FDF700B6DC2F /* Carthage copy frameworks */ = {
+		CAF2F9F9F86EB0A5CAA8B56C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
-			name = "Carthage copy frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Koala/Pods-Koala-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE27B76199DF2E202D1222B8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Koala/Pods-Koala-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF83D7834DB1F92D8B4BDC8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -292,6 +336,7 @@
 		};
 		58AE54EB1E97FC4400B6DC2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A727B7E0BF7CB4EBB7558939 /* Pods-Koala.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B58NS3SSSN;
@@ -309,6 +354,7 @@
 		};
 		58AE54EC1E97FC4400B6DC2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E12A09EF0D5F5724A79C4613 /* Pods-Koala.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B58NS3SSSN;
@@ -343,6 +389,7 @@
 				58AE54EC1E97FC4400B6DC2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

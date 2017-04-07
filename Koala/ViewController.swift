@@ -16,6 +16,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         intensityCircleView = UIView()
+        intensityCircleView.backgroundColor = "50E3C2".UIColor
         view.addSubview(intensityCircleView)
         intensityCircleView.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
