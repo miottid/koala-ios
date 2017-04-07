@@ -25,7 +25,7 @@ final class MainVC: UIViewController {
         titleLbl = UILabel()
         titleLbl.textColor = .white
         titleLbl.font = .koalaFont(ofSize: 20, weight: UIFontWeightSemibold)
-        titleLbl.text = "Koala"
+        titleLbl.text = "koala"
         view.addSubview(titleLbl)
         intensityCircleView = IntensityCircleView()
         view.addSubview(intensityCircleView)
@@ -52,7 +52,7 @@ final class MainVC: UIViewController {
     
     func tappedSettingsBtn(_ sender: UIButton) {
         let settingsVC = SettingsVC()
-        let nav = UINavigationController(rootViewController: settingsVC)
+        let nav = SettingsNC(rootViewController: settingsVC)
         present(nav, animated: true)
     }
     
@@ -61,7 +61,7 @@ final class MainVC: UIViewController {
     }
     
     func tappedStartBtn(_ sender: UIButton) {
-        
+        UIScreen.main.brightness = 1
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +76,7 @@ final class MainVC: UIViewController {
     private func configureLayoutConstraints() {
         titleLbl.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(33)
+            $0.top.equalTo(24)
         }
         settingsBtn.snp.makeConstraints {
             $0.centerY.equalTo(titleLbl)

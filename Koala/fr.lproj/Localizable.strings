@@ -10,3 +10,6 @@
 "help" = "Instructions";
 "settings.close" = "Fermer";
 "session.start" = "Démarrer";
+"settings.contact_us" = "Nous joindre";
+"settings.rate" = "Noter l'application";
+"settings.share" = "Partager l'application";

@@ -10,3 +10,6 @@
 "help" = "Manual";
 "settings.close" = "Close";
 "session.start" = "Start";
+"settings.contact_us" = "Contact us";
+"settings.rate" = "Rate the app";
+"settings.share" = "Share the app";
