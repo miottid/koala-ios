@@ -23,6 +23,7 @@ final class MainVC: UIViewController {
     private var previousBrightness: CGFloat?
     
     private var colorPickerImageView: UIImageView!
+    private var colorPickerSlider: UISlider!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +61,19 @@ final class MainVC: UIViewController {
             $0.height.equalTo(40)
             $0.bottom.equalToSuperview().inset(7)
         }
+        colorPickerSlider = UISlider()
+        let emptyImasge = UIImage()
+        colorPickerSlider.setMaximumTrackImage(emptyImasge, for: .normal)
+        colorPickerSlider.setMinimumTrackImage(emptyImasge, for: .normal)
+        view.addSubview(colorPickerSlider)
+        colorPickerSlider.snp.makeConstraints {
+            $0.edges.equalTo(colorPickerImageView)
+        }
+        colorPickerSlider.setThumbImage(#imageLiteral(resourceName: "progress_thumb"), for: .normal)
+        colorPickerSlider.addTarget(self, action: #selector(sliderDidChange(_:)), for: .valueChanged)
         configureLayoutConstraints()
+        
+        colorPickerSlider.value = 0.463768
     }
     
     func tappedSettingsBtn(_ sender: UIButton) {
@@ -107,6 +120,17 @@ final class MainVC: UIViewController {
             
             startBtn.setTitle(L("session.start"), for: .normal)
         }
+    }
+    
+    func sliderDidChange(_ slider: UISlider) {
+        updateColor(for: slider.value.toCGFloat)
+    }
+    
+    private func updateColor(for progress: CGFloat) {
+        let point = CGPoint(x: colorPickerImageView.bounds.width * progress,
+                            y: colorPickerImageView.bounds.height / 2.0)
+        let color = colorPickerImageView.pickColor(at: point)
+        intensityCircleView.color = color
     }
     
     override func viewWillAppear(_ animated: Bool) {

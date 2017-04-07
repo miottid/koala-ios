@@ -11,6 +11,12 @@ import SwiftHelpers
 
 final class IntensityCircleView: SHCommonInitView {
     
+    var color: UIColor? {
+        didSet {
+            circleShapeLayer.fillColor = color?.cgColor
+        }
+    }
+    
     private var circleShapeLayer = CAShapeLayer()
     
     override func commonInit() {
