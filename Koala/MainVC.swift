@@ -97,6 +97,10 @@ final class MainVC: UIViewController {
                 $0.top.equalToSuperview().inset(-100)
             }
             
+            colorPickerImageView.snp.updateConstraints {
+                $0.bottom.equalToSuperview().offset(100)
+            }
+            
             UIView.animate(withDuration: 0.35) {
                 self.view.layoutIfNeeded()
             }
@@ -112,6 +116,10 @@ final class MainVC: UIViewController {
             
             titleLbl.snp.updateConstraints {
                 $0.top.equalToSuperview().offset(24)
+            }
+            
+            colorPickerImageView.snp.updateConstraints {
+                $0.bottom.equalToSuperview().inset(7)
             }
             
             UIView.animate(withDuration: 0.35) {
