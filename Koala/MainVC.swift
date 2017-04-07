@@ -18,6 +18,11 @@ final class MainVC: UIViewController {
     private var helpBtn: UIButton!
     
     private var startBtn: UIButton!
+    
+    private var hasStarted = false
+    private var previousBrightness: CGFloat?
+    
+    private var colorPickerImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +52,14 @@ final class MainVC: UIViewController {
         startBtn.titleLabel?.font = .systemFont(ofSize: 22)
         startBtn.addTarget(self, action: #selector(tappedStartBtn(_:)), for: .touchUpInside)
         view.addSubview(startBtn)
+        colorPickerImageView = UIImageView(image: #imageLiteral(resourceName: "color_picker"))
+        view.addSubview(colorPickerImageView)
+        colorPickerImageView.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(10)
+            $0.right.equalToSuperview().inset(10)
+            $0.height.equalTo(40)
+            $0.bottom.equalToSuperview().inset(7)
+        }
         configureLayoutConstraints()
     }
     
@@ -61,7 +74,39 @@ final class MainVC: UIViewController {
     }
     
     func tappedStartBtn(_ sender: UIButton) {
-        UIScreen.main.brightness = 1
+        if !hasStarted {
+            hasStarted = true
+            
+            previousBrightness = UIScreen.main.brightness
+            UIScreen.main.brightness = 1
+            
+            titleLbl.snp.updateConstraints {
+                $0.top.equalToSuperview().inset(-100)
+            }
+            
+            UIView.animate(withDuration: 0.35) {
+                self.view.layoutIfNeeded()
+            }
+            
+            startBtn.setTitle(L("session.stop"), for: .normal)
+        } else {
+            hasStarted = false
+            
+            if let prev = previousBrightness {
+                UIScreen.main.brightness = prev
+                previousBrightness = nil
+            }
+            
+            titleLbl.snp.updateConstraints {
+                $0.top.equalToSuperview().offset(24)
+            }
+            
+            UIView.animate(withDuration: 0.35) {
+                self.view.layoutIfNeeded()
+            }
+            
+            startBtn.setTitle(L("session.start"), for: .normal)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +121,7 @@ final class MainVC: UIViewController {
     private func configureLayoutConstraints() {
         titleLbl.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(24)
+            $0.top.equalToSuperview().offset(24)
         }
         settingsBtn.snp.makeConstraints {
             $0.centerY.equalTo(titleLbl)
@@ -91,7 +136,7 @@ final class MainVC: UIViewController {
         }
         intensityCircleView.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
-            $0.width.height.equalTo(view.snp.width).multipliedBy(0.80)
+            $0.width.height.equalTo(view.snp.width).multipliedBy(0.70)
         }
     }
 }
