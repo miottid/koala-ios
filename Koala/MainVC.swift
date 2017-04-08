@@ -25,8 +25,12 @@ final class MainVC: UIViewController {
     private var colorPickerImageView: UIImageView!
     private var colorPickerSlider: UISlider!
     
-    private var dimmingBtn: UIButton!
+    private var actionSheetDimmingBtn: UIButton!
     private var actionSheet: KoalaActionSheet!
+    
+    private var sessionDimmingBtn: UIButton!
+    private var sessionStartDate: Date?
+    private var choosenTime: TimeInterval = 8 * 60
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,13 +69,17 @@ final class MainVC: UIViewController {
         view.addSubview(colorPickerSlider)
         colorPickerSlider.setThumbImage(#imageLiteral(resourceName: "progress_thumb"), for: .normal)
         colorPickerSlider.addTarget(self, action: #selector(sliderDidChange(_:)), for: .valueChanged)
-        dimmingBtn = UIButton(type: .system)
-        dimmingBtn.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        dimmingBtn.alpha = 0
-        dimmingBtn.addTarget(self, action: #selector(tappedDismissBtn(_:)), for: .touchUpInside)
-        view.addSubview(dimmingBtn)
+        actionSheetDimmingBtn = UIButton(type: .system)
+        actionSheetDimmingBtn.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        actionSheetDimmingBtn.alpha = 0
+        actionSheetDimmingBtn.addTarget(self, action: #selector(tappedActionSheetDismissBtn(_:)), for: .touchUpInside)
+        view.addSubview(actionSheetDimmingBtn)
         actionSheet = KoalaActionSheet()
         view.addSubview(actionSheet)
+        sessionDimmingBtn = UIButton(type: .system)
+        sessionDimmingBtn.isUserInteractionEnabled = false
+        sessionDimmingBtn.addTarget(self, action: #selector(tappedSessionDimmingBtn(_:)), for: .touchUpInside)
+        view.addSubview(sessionDimmingBtn)
         configureLayoutConstraints()
         
         colorPickerSlider.value = 0.463768
@@ -88,11 +96,10 @@ final class MainVC: UIViewController {
     }
     
     func tappedStartBtn(_ sender: UIButton) {
+        sessionDimmingBtn.isUserInteractionEnabled = false
+        
         if !hasStarted {
             hasStarted = true
-            
-            previousBrightness = UIScreen.main.brightness
-            UIScreen.main.brightness = 1
             
             titleLbl.snp.updateConstraints {
                 $0.top.equalToSuperview().inset(-100)
@@ -105,11 +112,7 @@ final class MainVC: UIViewController {
             actionSheet.title = L("session.type.title")
             actionSheet.leftBtnTitle = L("session.type.eight_mins")
             actionSheet.rightBtnTitle = L("session.type.twenty_mins")
-            let dismissBlock: (Void) -> Void = {
-                self.tappedStartBtn(self.startBtn)
-            }
-            actionSheet.leftBtnBlock = dismissBlock
-            actionSheet.rightBtnBlock = dismissBlock
+            actionSheet.timeSelectedBlock = startSession(_:)
             actionSheet.snp.updateConstraints {
                 $0.bottom.equalToSuperview().inset(20)
             }
@@ -117,7 +120,8 @@ final class MainVC: UIViewController {
             animatePulse()
             
             UIView.animate(withDuration: 0.35) {
-                self.dimmingBtn.alpha = 1
+                self.startBtn.alpha = 1
+                self.actionSheetDimmingBtn.alpha = 1
                 self.view.layoutIfNeeded()
             }
             
@@ -145,8 +149,9 @@ final class MainVC: UIViewController {
             self.intensityCircleView.layer.removeAllAnimations()
             
             UIView.animate(withDuration: 0.35) {
+                self.startBtn.alpha = 1
                 self.intensityCircleView.transform = CGAffineTransform.identity
-                self.dimmingBtn.alpha = 0
+                self.actionSheetDimmingBtn.alpha = 0
                 self.actionSheet.layoutIfNeeded()
                 self.view.layoutIfNeeded()
             }
@@ -155,7 +160,11 @@ final class MainVC: UIViewController {
         }
     }
     
-    func tappedDismissBtn(_ sender: UIButton) {
+    func tappedActionSheetDismissBtn(_ sender: UIButton) {
+        tappedStartBtn(startBtn)
+    }
+    
+    func tappedSessionDimmingBtn(_ sender: UIButton) {
         tappedStartBtn(startBtn)
     }
     
@@ -173,10 +182,65 @@ final class MainVC: UIViewController {
             scaleAnimation.autoreverses = true
             scaleAnimation.fromValue = 0.7;
             scaleAnimation.toValue = 0.6;
-    //        scaleAnimation.fromValue = 1.05;
-    //        scaleAnimation.toValue = 0.95;
             self.intensityCircleView.layer.add(scaleAnimation, forKey: "scale")
         }
+    }
+    
+    private func startSession(_ minute: Int) {
+        choosenTime = TimeInterval(minute) * 60
+        previousBrightness = UIScreen.main.brightness
+        UIScreen.main.brightness = 1
+        
+        sessionDimmingBtn.isUserInteractionEnabled = true
+        
+        actionSheet.snp.updateConstraints {
+            $0.bottom.equalToSuperview().offset(150)
+        }
+        
+        intensityCircleView.layer.removeAllAnimations()
+        
+        UIView.animate(withDuration: 0.35, animations: {
+            self.actionSheetDimmingBtn.alpha = 0
+            self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
+            self.startBtn.alpha = 0
+        }, completion: { finished in
+            self.sessionStartDate = Date()
+            self.launchCycle(seconds: 5)
+        })
+    }
+    
+    fileprivate func launchCycle(seconds: TimeInterval) {
+        guard let startDate = self.sessionStartDate, startDate.timeIntervalSinceNow < choosenTime else {
+            self.sessionStartDate = nil
+            tappedStartBtn(startBtn)
+            return
+        }
+        let inspiration = seconds * 0.40
+        
+        let inspirationAnim = CABasicAnimation(keyPath: "transform.scale")
+        inspirationAnim.duration = inspiration
+        inspirationAnim.fromValue = 0.3
+        inspirationAnim.toValue = 1.0
+        inspirationAnim.isRemovedOnCompletion = false
+        inspirationAnim.fillMode = kCAFillModeBackwards
+        inspirationAnim.beginTime = 0
+        
+        let expirationAnim = CABasicAnimation(keyPath: "transform.scale")
+        expirationAnim.duration = seconds - inspiration
+        expirationAnim.fromValue = 1.0
+        expirationAnim.toValue = 0.3
+        expirationAnim.beginTime = CFTimeInterval(inspiration)
+        
+        let group = CAAnimationGroup()
+        group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        group.duration = seconds
+        group.animations = [inspirationAnim, expirationAnim]
+        group.repeatCount = .infinity
+        self.intensityCircleView.layer.add(group, forKey: "Scale")
+    }
+    
+    private func stopSession() {
+        tappedStartBtn(startBtn)
     }
     
     private func updateColor(for progress: CGFloat) {
@@ -216,7 +280,7 @@ final class MainVC: UIViewController {
             $0.centerX.centerY.equalToSuperview()
             $0.width.height.equalTo(view.snp.width).multipliedBy(0.70)
         }
-        dimmingBtn.snp.makeConstraints {
+        actionSheetDimmingBtn.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         actionSheet.snp.makeConstraints {
@@ -235,6 +299,9 @@ final class MainVC: UIViewController {
             $0.right.equalTo(colorPickerImageView)
             $0.centerY.equalTo(colorPickerImageView)
             $0.height.equalTo(40)
+        }
+        sessionDimmingBtn.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }

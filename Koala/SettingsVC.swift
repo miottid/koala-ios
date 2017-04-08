@@ -111,7 +111,7 @@ final class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDele
         let yesAction = UIAlertAction(title: L("yes"), style: .default) { action in
             let innerAlert = UIAlertController(title: L("rate.go_appstore"), message: nil, preferredStyle: .alert)
             let yesAction = UIAlertAction(title: L("yes"), style: .default) { action in
-                if let url = URL(string: "http://appstore.com/muxumuxu/koala") {
+                if let url = URL(string: "https://appstore.com/muxumuxu/koala") {
                     UIApplication.shared.open(url, options: [:])
                 }
             }

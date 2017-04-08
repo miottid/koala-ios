@@ -27,8 +27,7 @@ final class KoalaActionSheet: SHCommonInitView {
         }
     }
     
-    var leftBtnBlock: ((Void) -> Void)?
-    var rightBtnBlock: ((Void) -> Void)?
+    var timeSelectedBlock: ((Int) -> Void)?
 
     private var titleLbl = UILabel()
     private var leftBtn = UIButton(type: .system)
@@ -69,10 +68,10 @@ final class KoalaActionSheet: SHCommonInitView {
     }
     
     func tappedLeftBtn(_ sender: UIButton) {
-        leftBtnBlock?()
+        timeSelectedBlock?(8)
     }
     
     func tappedRightBtn(_ sender: UIButton) {
-        rightBtnBlock?()
+        timeSelectedBlock?(20)
     }
 }
