@@ -131,9 +131,13 @@ final class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     private func shareApp() {
-        
+        var activities: [Any] = [L("share.message")]
+        if let link = URL(string: "http://appstore.com/muxumuxu/koala") {
+            activities.append(link)
+        }
+        let activity = UIActivityViewController(activityItems: activities, applicationActivities: nil)
+        present(activity, animated: true)
     }
-
 }
 
 extension SettingsVC: MFMailComposeViewControllerDelegate {
