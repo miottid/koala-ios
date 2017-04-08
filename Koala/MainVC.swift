@@ -101,6 +101,8 @@ final class MainVC: UIViewController {
         if !hasStarted {
             hasStarted = true
             
+            UIApplication.shared.isIdleTimerDisabled = false
+            
             titleLbl.snp.updateConstraints {
                 $0.top.equalToSuperview().inset(-100)
             }
@@ -130,6 +132,7 @@ final class MainVC: UIViewController {
             hasStarted = false
             
             if let prev = previousBrightness {
+                UIApplication.shared.isIdleTimerDisabled = true
                 UIScreen.main.brightness = prev
                 previousBrightness = nil
             }
@@ -146,11 +149,11 @@ final class MainVC: UIViewController {
                 $0.bottom.equalToSuperview().offset(150)
             }
             
-            self.intensityCircleView.layer.removeAllAnimations()
+            intensityCircleView.layer.removeAllAnimations()
             
             UIView.animate(withDuration: 0.35) {
                 self.startBtn.alpha = 1
-                self.intensityCircleView.transform = CGAffineTransform.identity
+                self.intensityCircleView.transform = .identity
                 self.actionSheetDimmingBtn.alpha = 0
                 self.actionSheet.layoutIfNeeded()
                 self.view.layoutIfNeeded()
@@ -201,17 +204,17 @@ final class MainVC: UIViewController {
         
         UIView.animate(withDuration: 0.35, animations: {
             self.actionSheetDimmingBtn.alpha = 0
-            self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
+            self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             self.startBtn.alpha = 0
         }, completion: { finished in
             self.sessionStartDate = Date()
-            self.launchCycle(seconds: 5)
+            self.launchCycle(seconds: 11)
         })
     }
     
     fileprivate func launchCycle(seconds: TimeInterval) {
         guard let startDate = self.sessionStartDate, startDate.timeIntervalSinceNow < choosenTime else {
-            self.sessionStartDate = nil
+            sessionStartDate = nil
             tappedStartBtn(startBtn)
             return
         }
@@ -219,24 +222,24 @@ final class MainVC: UIViewController {
         
         let inspirationAnim = CABasicAnimation(keyPath: "transform.scale")
         inspirationAnim.duration = inspiration
-        inspirationAnim.fromValue = 0.3
-        inspirationAnim.toValue = 1.0
+        inspirationAnim.fromValue = 0.1
+        inspirationAnim.toValue = 1.5
         inspirationAnim.isRemovedOnCompletion = false
-        inspirationAnim.fillMode = kCAFillModeBackwards
         inspirationAnim.beginTime = 0
         
         let expirationAnim = CABasicAnimation(keyPath: "transform.scale")
         expirationAnim.duration = seconds - inspiration
-        expirationAnim.fromValue = 1.0
-        expirationAnim.toValue = 0.3
+        expirationAnim.fromValue = 1.5
+        expirationAnim.toValue = 0.1
         expirationAnim.beginTime = CFTimeInterval(inspiration)
+        expirationAnim.isRemovedOnCompletion = false
         
         let group = CAAnimationGroup()
         group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         group.duration = seconds
         group.animations = [inspirationAnim, expirationAnim]
         group.repeatCount = .infinity
-        self.intensityCircleView.layer.add(group, forKey: "Scale")
+        intensityCircleView.layer.add(group, forKey: "Scale")
     }
     
     private func stopSession() {
