@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftHelpers
+import MessageUI
 
 final class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -78,6 +79,71 @@ final class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let row = rows[indexPath.row]
+        switch row {
+        case .contactUs:
+            contactUs()
+        case .rate:
+            rateApp()
+        case .share:
+            shareApp()
+        }
+    }
+    
+    private func contactUs() {
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSFontAttributeName: UIFont.systemFont(ofSize: 17, weight: UIFontWeightSemibold),
+            NSForegroundColorAttributeName: UIColor.black
+        ]
+        
+        let mail = MFMailComposeViewController()
+        mail.mailComposeDelegate = self
+        mail.setToRecipients(["koala@muxumuxu.com"])
+        mail.setSubject(L("contactus.subject"))
+        present(mail, animated: true)
+    }
+    
+    private func rateApp() {
+        let alert = UIAlertController(title: L("settings.rate"), message: nil, preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: L("yes"), style: .default) { action in
+            let innerAlert = UIAlertController(title: L("rate.go_appstore"), message: nil, preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: L("yes"), style: .default) { action in
+                if let url = URL(string: "http://appstore.com/muxumuxu/koala") {
+                    UIApplication.shared.open(url, options: [:])
+                }
+            }
+            let noAction = UIAlertAction(title: L("no"), style: .default) { action in
+                self.contactUs()
+            }
+            innerAlert.addAction(noAction)
+            innerAlert.addAction(yesAction)
+            self.present(innerAlert, animated: true, completion: nil)
+        }
+        let noAction = UIAlertAction(title: L("no"), style: .cancel) { action in
+            self.contactUs()
+        }
+        alert.addAction(noAction)
+        alert.addAction(yesAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func shareApp() {
+        
     }
 
+}
+
+extension SettingsVC: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        UINavigationBar.appearance().barTintColor = "131313".UIColor
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSFontAttributeName: UIFont.systemFont(ofSize: 17, weight: UIFontWeightSemibold),
+            NSForegroundColorAttributeName: UIColor.white
+        ]
+        controller.dismiss(animated: true)
+    }
 }

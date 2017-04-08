@@ -162,8 +162,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58AE54EA1E97FC4400B6DC2F /* Build configuration list for PBXNativeTarget "Koala" */;
 			buildPhases = (
-				58B108701E98E397002FCB56 /* Import Localized strings */,
 				EF83D7834DB1F92D8B4BDC8C /* [CP] Check Pods Manifest.lock */,
+				58B108701E98E397002FCB56 /* Import Localized strings */,
 				58AE54D41E97FC4400B6DC2F /* Sources */,
 				58AE54D51E97FC4400B6DC2F /* Frameworks */,
 				58AE54D61E97FC4400B6DC2F /* Resources */,
