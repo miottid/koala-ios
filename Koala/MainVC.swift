@@ -127,7 +127,7 @@ final class MainVC: UIViewController {
                 self.view.layoutIfNeeded()
             }
             
-            startBtn.setTitle(L("session.stop"), for: .normal)
+            startBtn.setTitle(nil, for: .normal)
         } else {
             hasStarted = false
             
@@ -204,11 +204,11 @@ final class MainVC: UIViewController {
         
         UIView.animate(withDuration: 0.35, animations: {
             self.actionSheetDimmingBtn.alpha = 0
-            self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
             self.startBtn.alpha = 0
         }, completion: { finished in
             self.sessionStartDate = Date()
-            self.launchCycle(seconds: 11)
+            self.launchCycle(seconds: 8)
         })
     }
     
@@ -222,15 +222,15 @@ final class MainVC: UIViewController {
         
         let inspirationAnim = CABasicAnimation(keyPath: "transform.scale")
         inspirationAnim.duration = inspiration
-        inspirationAnim.fromValue = 0.1
-        inspirationAnim.toValue = 1.5
+        inspirationAnim.fromValue = 0.3
+        inspirationAnim.toValue = 1
         inspirationAnim.isRemovedOnCompletion = false
         inspirationAnim.beginTime = 0
         
         let expirationAnim = CABasicAnimation(keyPath: "transform.scale")
         expirationAnim.duration = seconds - inspiration
-        expirationAnim.fromValue = 1.5
-        expirationAnim.toValue = 0.1
+        expirationAnim.fromValue = 1
+        expirationAnim.toValue = 0.3
         expirationAnim.beginTime = CFTimeInterval(inspiration)
         expirationAnim.isRemovedOnCompletion = false
         
