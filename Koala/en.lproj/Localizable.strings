@@ -1,19 +1,11 @@
-/* 
-  Localizable.strings
-  Koala
-
-  Created by David Miotti on 07/04/2017.
-  Copyright © 2017 Muxu.Muxu. All rights reserved.
-*/
-// AUTO-GENERATED
+"session.stop" = "Stop";
+"settings.share" = "Share the app";
 "settings" = "Settings";
+"settings.rate" = "Rate the app";
 "help" = "Manual";
 "settings.close" = "Close";
 "session.start" = "Start";
 "settings.contact_us" = "Contact us";
-"settings.rate" = "Rate the app";
-"settings.share" = "Share the app";
-"session.stop" = "Stop";
-"session.type.title" = "New session";
 "session.type.eight_mins" = "8 min";
+"session.type.title" = "New session";
 "session.type.twenty_mins" = "20 min";
