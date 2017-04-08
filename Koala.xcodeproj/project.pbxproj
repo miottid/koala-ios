@@ -440,6 +440,7 @@
 				DEVELOPMENT_TEAM = B58NS3SSSN;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Koala/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.muxumuxu.koala;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,6 +457,7 @@
 				DEVELOPMENT_TEAM = B58NS3SSSN;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Koala/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.muxumuxu.koala;
 				PRODUCT_NAME = "$(TARGET_NAME)";
