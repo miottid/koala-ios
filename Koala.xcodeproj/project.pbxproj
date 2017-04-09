@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		580AAE321E9813170083D0CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 580AAE341E9813170083D0CC /* Localizable.strings */; };
 		580AAE391E981FBF0083D0CC /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AAE381E981FBF0083D0CC /* SettingsCell.swift */; };
-		580AAE3B1E9824EC0083D0CC /* SettingsNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AAE3A1E9824EC0083D0CC /* SettingsNC.swift */; };
+		580AAE3B1E9824EC0083D0CC /* LightNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AAE3A1E9824EC0083D0CC /* LightNC.swift */; };
 		5814A1B51E980EE0000A604A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5814A1B41E980EE0000A604A /* SettingsVC.swift */; };
+		585C8BFE1E9A3F370000C63D /* InstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585C8BFD1E9A3F370000C63D /* InstructionVC.swift */; };
 		588DBCF31E98515E00271415 /* KoalaActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DBCF21E98515E00271415 /* KoalaActionSheet.swift */; };
 		58AE54DC1E97FC4400B6DC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54DB1E97FC4400B6DC2F /* AppDelegate.swift */; };
 		58AE54DE1E97FC4400B6DC2F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54DD1E97FC4400B6DC2F /* MainVC.swift */; };
@@ -32,8 +33,9 @@
 		580AAE351E9813180083D0CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		580AAE361E9813190083D0CC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		580AAE381E981FBF0083D0CC /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
-		580AAE3A1E9824EC0083D0CC /* SettingsNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsNC.swift; sourceTree = "<group>"; };
+		580AAE3A1E9824EC0083D0CC /* LightNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightNC.swift; sourceTree = "<group>"; };
 		5814A1B41E980EE0000A604A /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		585C8BFD1E9A3F370000C63D /* InstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionVC.swift; sourceTree = "<group>"; };
 		588DBCF21E98515E00271415 /* KoalaActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoalaActionSheet.swift; sourceTree = "<group>"; };
 		58AE54D81E97FC4400B6DC2F /* Koala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koala.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58AE54DB1E97FC4400B6DC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +69,9 @@
 		580AAE2F1E9812B20083D0CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				585C8BFF1E9A41A30000C63D /* Common */,
 				588DBCF11E98512500271415 /* Main */,
+				585C8BFC1E9A3F1E0000C63D /* Manual */,
 				580AAE371E981FAB0083D0CC /* Settings */,
 			);
 			name = Controllers;
@@ -76,11 +80,26 @@
 		580AAE371E981FAB0083D0CC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				580AAE3A1E9824EC0083D0CC /* SettingsNC.swift */,
 				5814A1B41E980EE0000A604A /* SettingsVC.swift */,
 				580AAE381E981FBF0083D0CC /* SettingsCell.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		585C8BFC1E9A3F1E0000C63D /* Manual */ = {
+			isa = PBXGroup;
+			children = (
+				585C8BFD1E9A3F370000C63D /* InstructionVC.swift */,
+			);
+			name = Manual;
+			sourceTree = "<group>";
+		};
+		585C8BFF1E9A41A30000C63D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				580AAE3A1E9824EC0083D0CC /* LightNC.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		588DBCF11E98512500271415 /* Main */ = {
@@ -304,8 +323,9 @@
 				58AE54F31E98051C00B6DC2F /* IntensityCircleView.swift in Sources */,
 				58AE55001E9809EF00B6DC2F /* StyleSheet.swift in Sources */,
 				580AAE391E981FBF0083D0CC /* SettingsCell.swift in Sources */,
-				580AAE3B1E9824EC0083D0CC /* SettingsNC.swift in Sources */,
+				580AAE3B1E9824EC0083D0CC /* LightNC.swift in Sources */,
 				58AE54DE1E97FC4400B6DC2F /* MainVC.swift in Sources */,
+				585C8BFE1E9A3F370000C63D /* InstructionVC.swift in Sources */,
 				58AE54DC1E97FC4400B6DC2F /* AppDelegate.swift in Sources */,
 				5814A1B51E980EE0000A604A /* SettingsVC.swift in Sources */,
 			);

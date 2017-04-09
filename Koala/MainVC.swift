@@ -88,12 +88,13 @@ final class MainVC: UIViewController {
     
     func tappedSettingsBtn(_ sender: UIButton) {
         let settingsVC = SettingsVC()
-        let nav = SettingsNC(rootViewController: settingsVC)
+        let nav = LightNC(rootViewController: settingsVC)
         present(nav, animated: true)
     }
     
     func tappedHelpBtn(_ sender: UIButton) {
-        
+        let nav = LightNC(rootViewController: InstructionVC())
+        present(nav, animated: true)
     }
     
     func tappedStartBtn(_ sender: UIButton) {

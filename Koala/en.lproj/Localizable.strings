@@ -1,6 +1,8 @@
 "no" = "No";
+"instruction.headline" = "Let yourself be rocked by Koala";
 "settings.share" = "Share the app";
 "yes" = "Yes";
+"instruction.title" = "Manual";
 "help" = "Manual";
 "settings.close" = "Close";
 "session.start" = "Start";
@@ -8,6 +10,11 @@
 "session.stop" = "Stop";
 "settings" = "Settings";
 "settings.rate" = "Give a review";
+"instruction.content" = "1. Je lance Koala
+2. La lumière de Koala se diffuse
+3. Je respire en rythme avec la lumière
+4. Ma respiration se réduit progressivement
+5. Je m’endors et Koala s’éteint tout seul";
 "session.type.eight_mins" = "8 min";
 "rate.go_appstore" = "Thank you very much! Please share the love by giving us 5 stars on the Apple App Store";
 "settings.contact_us" = "Contact us";
