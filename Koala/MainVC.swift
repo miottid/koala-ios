@@ -156,6 +156,7 @@ final class MainVC: UIViewController {
                 self.startBtn.alpha = 1
                 self.intensityCircleView.transform = .identity
                 self.actionSheetDimmingBtn.alpha = 0
+                self.intensityCircleView.alpha = 1
                 self.actionSheet.layoutIfNeeded()
                 self.view.layoutIfNeeded()
             }
@@ -257,7 +258,7 @@ final class MainVC: UIViewController {
         group.duration = seconds
         group.animations = [inspirationAnim, expirationAnim, fadeInAnim, fadeOutAnim]
         group.repeatCount = .infinity
-        intensityCircleView.layer.add(group, forKey: "Scale")
+        intensityCircleView.layer.add(group, forKey: "breathes")
     }
     
     private func stopSession() {
