@@ -147,6 +147,8 @@ final class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDele
             activities.append(link)
         }
         let activity = UIActivityViewController(activityItems: activities, applicationActivities: nil)
+        activity.setValue(L("share.subject"), forKey: "subject")
+        activity.excludedActivityTypes = [ .assignToContact, .saveToCameraRoll ]
         present(activity, animated: true)
     }
 }

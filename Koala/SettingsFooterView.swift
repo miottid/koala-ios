@@ -17,7 +17,7 @@ final class SettingsFooterView: SHCommonInitView {
     override func commonInit() {
         super.commonInit()
         addSubview(faceImageView)
-        madeWithLoveLbl.text = L("session.made_with_love")
+        madeWithLoveLbl.text = L("footer.made_with_love")
         madeWithLoveLbl.textColor = .white
         madeWithLoveLbl.textAlignment = .center
         madeWithLoveLbl.font = .systemFont(ofSize: 11)
