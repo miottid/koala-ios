@@ -13,6 +13,8 @@
 		5814A1B51E980EE0000A604A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5814A1B41E980EE0000A604A /* SettingsVC.swift */; };
 		585C8BFE1E9A3F370000C63D /* InstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585C8BFD1E9A3F370000C63D /* InstructionVC.swift */; };
 		585C8C011E9A59940000C63D /* SettingsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585C8C001E9A59940000C63D /* SettingsFooterView.swift */; };
+		585C8C181E9A70A20000C63D /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585C8C171E9A70A20000C63D /* Stickers.xcassets */; };
+		585C8C1D1E9A70A20000C63D /* Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 585C8C151E9A70A20000C63D /* Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		588DBCF31E98515E00271415 /* KoalaActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DBCF21E98515E00271415 /* KoalaActionSheet.swift */; };
 		58AE54DC1E97FC4400B6DC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54DB1E97FC4400B6DC2F /* AppDelegate.swift */; };
 		58AE54DE1E97FC4400B6DC2F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54DD1E97FC4400B6DC2F /* MainVC.swift */; };
@@ -28,6 +30,30 @@
 		FF498BF8C44CE175901B58F8 /* Pods_Koala.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7E162027FB2807504D0B2B /* Pods_Koala.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		585C8C1A1E9A70A20000C63D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58AE54D01E97FC4400B6DC2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 585C8C141E9A70A20000C63D;
+			remoteInfo = Stickers;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		585C8C1C1E9A70A20000C63D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				585C8C1D1E9A70A20000C63D /* Stickers.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		580AAE2E1E98116F0083D0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		580AAE331E9813170083D0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -38,6 +64,9 @@
 		5814A1B41E980EE0000A604A /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		585C8BFD1E9A3F370000C63D /* InstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionVC.swift; sourceTree = "<group>"; };
 		585C8C001E9A59940000C63D /* SettingsFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsFooterView.swift; sourceTree = "<group>"; };
+		585C8C151E9A70A20000C63D /* Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Stickers.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		585C8C171E9A70A20000C63D /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
+		585C8C191E9A70A20000C63D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		588DBCF21E98515E00271415 /* KoalaActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoalaActionSheet.swift; sourceTree = "<group>"; };
 		58AE54D81E97FC4400B6DC2F /* Koala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koala.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58AE54DB1E97FC4400B6DC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +134,15 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		585C8C161E9A70A20000C63D /* Stickers */ = {
+			isa = PBXGroup;
+			children = (
+				585C8C171E9A70A20000C63D /* Stickers.xcassets */,
+				585C8C191E9A70A20000C63D /* Info.plist */,
+			);
+			path = Stickers;
+			sourceTree = "<group>";
+		};
 		588DBCF11E98512500271415 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				58AE54DA1E97FC4400B6DC2F /* Koala */,
+				585C8C161E9A70A20000C63D /* Stickers */,
 				58AE54D91E97FC4400B6DC2F /* Products */,
 				D2E7568666D024EC1B25E1EB /* Pods */,
 				CBD22133DF88E6D4F81BF312 /* Frameworks */,
@@ -129,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				58AE54D81E97FC4400B6DC2F /* Koala.app */,
+				585C8C151E9A70A20000C63D /* Stickers.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,6 +220,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		585C8C141E9A70A20000C63D /* Stickers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 585C8C201E9A70A20000C63D /* Build configuration list for PBXNativeTarget "Stickers" */;
+			buildPhases = (
+				585C8C131E9A70A20000C63D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stickers;
+			productName = Stickers;
+			productReference = 585C8C151E9A70A20000C63D /* Stickers.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
 		58AE54D71E97FC4400B6DC2F /* Koala */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58AE54EA1E97FC4400B6DC2F /* Build configuration list for PBXNativeTarget "Koala" */;
@@ -190,10 +245,12 @@
 				58AE54D61E97FC4400B6DC2F /* Resources */,
 				CAF2F9F9F86EB0A5CAA8B56C /* [CP] Embed Pods Frameworks */,
 				EE27B76199DF2E202D1222B8 /* [CP] Copy Pods Resources */,
+				585C8C1C1E9A70A20000C63D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				585C8C1B1E9A70A20000C63D /* PBXTargetDependency */,
 			);
 			name = Koala;
 			productName = Koala;
@@ -210,6 +267,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Muxu.Muxu;
 				TargetAttributes = {
+					585C8C141E9A70A20000C63D = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = B58NS3SSSN;
+						ProvisioningStyle = Automatic;
+					};
 					58AE54D71E97FC4400B6DC2F = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = B58NS3SSSN;
@@ -232,11 +294,20 @@
 			projectRoot = "";
 			targets = (
 				58AE54D71E97FC4400B6DC2F /* Koala */,
+				585C8C141E9A70A20000C63D /* Stickers */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		585C8C131E9A70A20000C63D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				585C8C181E9A70A20000C63D /* Stickers.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58AE54D61E97FC4400B6DC2F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +393,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		585C8C1B1E9A70A20000C63D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 585C8C141E9A70A20000C63D /* Stickers */;
+			targetProxy = 585C8C1A1E9A70A20000C63D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		580AAE341E9813170083D0CC /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -344,6 +423,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		585C8C1E1E9A70A20000C63D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = B58NS3SSSN;
+				INFOPLIST_FILE = Stickers/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muxumuxu.koala.Stickers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		585C8C1F1E9A70A20000C63D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = B58NS3SSSN;
+				INFOPLIST_FILE = Stickers/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muxumuxu.koala.Stickers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		58AE54E81E97FC4400B6DC2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -478,6 +581,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		585C8C201E9A70A20000C63D /* Build configuration list for PBXNativeTarget "Stickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				585C8C1E1E9A70A20000C63D /* Debug */,
+				585C8C1F1E9A70A20000C63D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		58AE54D31E97FC4400B6DC2F /* Build configuration list for PBXProject "Koala" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
