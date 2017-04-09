@@ -3,21 +3,22 @@
 "settings.share" = "Share the app";
 "yes" = "Yes";
 "instruction.title" = "Manual";
-"help" = "Manual";
+"help" = "How to";
 "settings.close" = "Close";
 "session.start" = "Start";
 "session.type.title" = "New session";
+"session.made_with_love" = "Made with love by Muxu.Muxu";
 "session.stop" = "Stop";
 "settings" = "Settings";
-"settings.rate" = "Give a review";
+"settings.rate" = "Do you like Koala?";
 "instruction.content" = "1. Je lance Koala
 2. La lumière de Koala se diffuse
 3. Je respire en rythme avec la lumière
 4. Ma respiration se réduit progressivement
 5. Je m’endors et Koala s’éteint tout seul";
 "session.type.eight_mins" = "8 min";
-"rate.go_appstore" = "Thank you very much! Please share the love by giving us 5 stars on the Apple App Store";
+"rate.go_appstore" = "Thank you very much! Please help Koala by giving it 5 stars on the Apple App Store";
 "settings.contact_us" = "Contact us";
 "share.message" = "Improve your sleep with Koala";
-"contactus.subject" = "Contact Us";
+"contactus.subject" = "About Koala";
 "session.type.twenty_mins" = "20 min";

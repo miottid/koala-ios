@@ -12,6 +12,7 @@
 		580AAE3B1E9824EC0083D0CC /* LightNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AAE3A1E9824EC0083D0CC /* LightNC.swift */; };
 		5814A1B51E980EE0000A604A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5814A1B41E980EE0000A604A /* SettingsVC.swift */; };
 		585C8BFE1E9A3F370000C63D /* InstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585C8BFD1E9A3F370000C63D /* InstructionVC.swift */; };
+		585C8C011E9A59940000C63D /* SettingsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585C8C001E9A59940000C63D /* SettingsFooterView.swift */; };
 		588DBCF31E98515E00271415 /* KoalaActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DBCF21E98515E00271415 /* KoalaActionSheet.swift */; };
 		58AE54DC1E97FC4400B6DC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54DB1E97FC4400B6DC2F /* AppDelegate.swift */; };
 		58AE54DE1E97FC4400B6DC2F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE54DD1E97FC4400B6DC2F /* MainVC.swift */; };
@@ -36,6 +37,7 @@
 		580AAE3A1E9824EC0083D0CC /* LightNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightNC.swift; sourceTree = "<group>"; };
 		5814A1B41E980EE0000A604A /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		585C8BFD1E9A3F370000C63D /* InstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionVC.swift; sourceTree = "<group>"; };
+		585C8C001E9A59940000C63D /* SettingsFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsFooterView.swift; sourceTree = "<group>"; };
 		588DBCF21E98515E00271415 /* KoalaActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoalaActionSheet.swift; sourceTree = "<group>"; };
 		58AE54D81E97FC4400B6DC2F /* Koala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koala.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58AE54DB1E97FC4400B6DC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				5814A1B41E980EE0000A604A /* SettingsVC.swift */,
 				580AAE381E981FBF0083D0CC /* SettingsCell.swift */,
+				585C8C001E9A59940000C63D /* SettingsFooterView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585C8C011E9A59940000C63D /* SettingsFooterView.swift in Sources */,
 				588DBCF31E98515E00271415 /* KoalaActionSheet.swift in Sources */,
 				58AE54F31E98051C00B6DC2F /* IntensityCircleView.swift in Sources */,
 				58AE55001E9809EF00B6DC2F /* StyleSheet.swift in Sources */,

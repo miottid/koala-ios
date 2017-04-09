@@ -31,6 +31,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
     private var sessionDimmingBtn: UIButton!
     private var choosenTime: TimeInterval = 8 * 60
     private var elapsedTime: TimeInterval = 0
+    private var sessionStartDate: Date?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -284,6 +285,9 @@ final class MainVC: UIViewController, CAAnimationDelegate {
     }
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        guard sessionStartDate != nil else {
+            return
+        }
         /// Here calculate the next cycle or stop it
         if elapsedTime < choosenTime {
             let percent = elapsedTime / choosenTime
@@ -299,7 +303,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
             }
             self.launchCycle(seconds: cycleLength)
         } else {
-            elapsedTime = .infinity
+            tappedStartBtn(startBtn)
         }
     }
     

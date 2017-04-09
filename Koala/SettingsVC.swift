@@ -49,6 +49,13 @@ final class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDele
         tableView.delegate = self
         view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        
+        let footerView = SettingsFooterView()
+        view.addSubview(footerView)
+        footerView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(50)
+        }
     }
     
     func tappedCloseBtn(_ sender: UIButton) {
@@ -92,6 +99,10 @@ final class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     private func contactUs() {
+        guard MFMailComposeViewController.canSendMail() else {
+            return
+        }
+        
         UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().titleTextAttributes = [
