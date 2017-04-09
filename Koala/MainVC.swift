@@ -70,6 +70,8 @@ final class MainVC: UIViewController {
         view.addSubview(colorPickerSlider)
         colorPickerSlider.setThumbImage(#imageLiteral(resourceName: "progress_thumb"), for: .normal)
         colorPickerSlider.addTarget(self, action: #selector(sliderDidChange(_:)), for: .valueChanged)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedSlider(_:)))
+        colorPickerSlider.addGestureRecognizer(tapGesture)
         actionSheetDimmingBtn = UIButton(type: .system)
         actionSheetDimmingBtn.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         actionSheetDimmingBtn.alpha = 0
@@ -176,6 +178,19 @@ final class MainVC: UIViewController {
     
     func sliderDidChange(_ slider: UISlider) {
         updateColor(for: slider.value.toCGFloat)
+    }
+    
+    func tappedSlider(_ sender: UITapGestureRecognizer) {
+        guard let slider = sender.view as? UISlider, !slider.isHighlighted else {
+            return
+        }
+        
+        let pt = sender.location(in: slider)
+        let percentage = pt.x / slider.bounds.width
+        let delta = Float(percentage) * slider.maximumValue - slider.minimumValue
+        let value = slider.minimumValue + delta
+        slider.setValue(value, animated: true)
+        updateColor(for: value.toCGFloat)
     }
     
     private func animatePulse() {
