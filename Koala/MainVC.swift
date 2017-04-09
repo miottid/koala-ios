@@ -9,6 +9,8 @@
 import UIKit
 import SnapKit
 import SwiftHelpers
+import UserNotifications
+import UserNotificationsUI
 
 final class MainVC: UIViewController, CAAnimationDelegate {
     
@@ -44,12 +46,14 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         intensityCircleView = IntensityCircleView()
         view.addSubview(intensityCircleView)
         settingsBtn = UIButton(type: .system)
+        settingsBtn.contentEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         settingsBtn.setTitle(L("settings"), for: .normal)
         settingsBtn.setTitleColor(.white, for: .normal)
         settingsBtn.titleLabel?.font = .systemFont(ofSize: 16)
         settingsBtn.addTarget(self, action: #selector(tappedSettingsBtn(_:)), for: .touchUpInside)
         view.addSubview(settingsBtn)
         helpBtn = UIButton(type: .system)
+        helpBtn.contentEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         helpBtn.setTitle(L("help"), for: .normal)
         helpBtn.setTitleColor(.white, for: .normal)
         helpBtn.titleLabel?.font = .systemFont(ofSize: 16)
@@ -340,11 +344,11 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         }
         settingsBtn.snp.makeConstraints {
             $0.centerY.equalTo(titleLbl)
-            $0.left.equalToSuperview().offset(30)
+            $0.left.equalToSuperview().offset(10)
         }
         helpBtn.snp.makeConstraints {
             $0.centerY.equalTo(titleLbl)
-            $0.right.equalToSuperview().inset(30)
+            $0.right.equalToSuperview().inset(10)
         }
         startBtn.snp.makeConstraints {
             $0.edges.equalTo(intensityCircleView)

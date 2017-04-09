@@ -49,9 +49,10 @@
 "instruction.title" = "How to";
 "instruction.headline" = "Let yourself be gently soothed by Koala";
 "instruction.content" = "1. Start Koala
-2. Koala's light spread through your roof
-3. Breathe in time to the rythm of the light
-3a. Inhale when the light intensifies
-3b. Exhale when the light decreases
-4. Your breathing slowly reduces
-5. You fall asleep and Koala stops by itself";
+2. Choose the session duration
+3. Koala's light spreads on the ceiling
+4. Breathe in time to the rythm of the light
+     a. Inhale when the light intensifies
+     b. Exhale when the light decreases
+5. Your breathing slowly reduces
+6. You fall asleep and Koala stops by itself";
