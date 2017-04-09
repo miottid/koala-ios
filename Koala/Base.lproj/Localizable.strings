@@ -14,7 +14,8 @@
 "rate.go_appstore" = "Merci ! Aidez Koala en lui laissant 5 étoiles sur l’Apple App Store";
 "share.subject" = "Découvre l'application Koala";
 "share.message" = "Je te partage cette application, laisse toi bercer par Koala : ";
-"footer.made_with_love" = "Made with love by Muxu.Muxu";
+"footer.sleep_well" = "Bonne nuit de la part de Gilles le koala";
+"footer.made_with_love" = "Fait avec amour par Muxu.Muxu";
 // Session
 "session.stop" = "Arrêter";
 "session.type.title" = "Choisir une durée";
@@ -23,8 +24,8 @@
 // Instructions
 "instruction.title" = "Instructions";
 "instruction.headline" = "Laissez-vous bercer par Koala";
-"instruction.content" = "1. Je lance Koala
-2. La lumière de Koala se diffuse
+"instruction.content" = "1. Je démarre Koala
+2. La lumière de Koala se diffuse au plafond
 3. Je respire en rythme avec la lumière
 4. Ma respiration se réduit progressivement
 5. Je m’endors et Koala s’éteint tout seul";

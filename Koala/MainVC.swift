@@ -64,9 +64,9 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         colorPickerImageView = UIImageView(image: #imageLiteral(resourceName: "color_picker"))
         view.addSubview(colorPickerImageView)
         colorPickerSlider = UISlider()
-        let emptyImasge = UIImage()
-        colorPickerSlider.setMaximumTrackImage(emptyImasge, for: .normal)
-        colorPickerSlider.setMinimumTrackImage(emptyImasge, for: .normal)
+        let emptyImage = UIImage()
+        colorPickerSlider.setMaximumTrackImage(emptyImage, for: .normal)
+        colorPickerSlider.setMinimumTrackImage(emptyImage, for: .normal)
         view.addSubview(colorPickerSlider)
         colorPickerSlider.setThumbImage(#imageLiteral(resourceName: "progress_thumb"), for: .normal)
         colorPickerSlider.addTarget(self, action: #selector(sliderDidChange(_:)), for: .valueChanged)
@@ -88,20 +88,31 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         colorPickerSlider.value = 0.463768
     }
     
-    func tappedSettingsBtn(_ sender: UIButton) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let defaults = UserDefaults.standard
+        let alreadyLaunched = defaults.bool(forKey: "alreadyLaunched")
+        if !alreadyLaunched {
+            defaults.set(true, forKey: "alreadyLaunched")
+            defaults.synchronize()
+            tappedSettingsBtn()
+        }
+    }
+    
+    func tappedSettingsBtn(_ sender: UIButton? = nil) {
         let settingsVC = SettingsVC()
         let nav = LightNC(rootViewController: settingsVC)
         present(nav, animated: true)
     }
     
-    func tappedHelpBtn(_ sender: UIButton) {
+    func tappedHelpBtn(_ sender: UIButton? = nil) {
         let nav = LightNC(rootViewController: InstructionVC())
         present(nav, animated: true)
     }
     
-    func tappedStartBtn(_ sender: UIButton) {
+    func tappedStartBtn(_ sender: UIButton? = nil) {
         sessionDimmingBtn.isUserInteractionEnabled = false
-        
         if !hasStarted {
             prepareForSession()
         } else {
@@ -109,16 +120,16 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         }
     }
     
-    func tappedActionSheetDismissBtn(_ sender: UIButton) {
-        tappedStartBtn(startBtn)
+    func tappedActionSheetDismissBtn(_ sender: UIButton? = nil) {
+        stopSession()
     }
     
-    func tappedSessionDimmingBtn(_ sender: UIButton) {
-        tappedStartBtn(startBtn)
+    func tappedSessionDimmingBtn(_ sender: UIButton? = nil) {
+        stopSession()
     }
     
-    func sliderDidChange(_ slider: UISlider) {
-        updateColor(for: slider.value.toCGFloat)
+    func sliderDidChange(_ slider: UISlider? = nil) {
+        updateColor(for: colorPickerSlider.value.toCGFloat)
     }
     
     fileprivate func prepareForSession() {
