@@ -36,11 +36,11 @@ final class SettingsFooterView: SHCommonInitView {
             $0.centerX.equalToSuperview()
         }
         madeWithLoveLbl.snp.makeConstraints {
-            $0.top.equalTo(faceImageView.snp.bottom).offset(5)
+            $0.top.equalTo(faceImageView.snp.bottom).offset(3)
             $0.left.right.equalToSuperview()
         }
         versionLbl.snp.makeConstraints {
-            $0.top.equalTo(madeWithLoveLbl.snp.bottom).offset(2)
+            $0.top.equalTo(madeWithLoveLbl.snp.bottom).offset(5)
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview()
         }

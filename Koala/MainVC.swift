@@ -103,68 +103,9 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         sessionDimmingBtn.isUserInteractionEnabled = false
         
         if !hasStarted {
-            hasStarted = true
-            
-            UIApplication.shared.isIdleTimerDisabled = false
-            
-            titleLbl.snp.updateConstraints {
-                $0.top.equalToSuperview().inset(-100)
-            }
-            
-            colorPickerImageView.snp.updateConstraints {
-                $0.bottom.equalToSuperview().offset(100)
-            }
-            
-            actionSheet.title = L("session.type.title")
-            actionSheet.leftBtnTitle = L("session.type.eight_mins")
-            actionSheet.rightBtnTitle = L("session.type.twenty_mins")
-            actionSheet.timeSelectedBlock = startSession(_:)
-            actionSheet.snp.updateConstraints {
-                $0.bottom.equalToSuperview().inset(20)
-            }
-            
-            animatePulse()
-            
-            UIView.animate(withDuration: 0.35) {
-                self.startBtn.alpha = 1
-                self.actionSheetDimmingBtn.alpha = 1
-                self.view.layoutIfNeeded()
-            }
-            
-            startBtn.setTitle(nil, for: .normal)
+            prepareForSession()
         } else {
-            hasStarted = false
-            
-            if let prev = previousBrightness {
-                UIApplication.shared.isIdleTimerDisabled = true
-                UIScreen.main.brightness = prev
-                previousBrightness = nil
-            }
-            
-            titleLbl.snp.updateConstraints {
-                $0.top.equalToSuperview().offset(24)
-            }
-            
-            colorPickerImageView.snp.updateConstraints {
-                $0.bottom.equalToSuperview().inset(7)
-            }
-            
-            actionSheet.snp.updateConstraints {
-                $0.bottom.equalToSuperview().offset(150)
-            }
-            
-            intensityCircleView.layer.removeAllAnimations()
-            
-            UIView.animate(withDuration: 0.35) {
-                self.startBtn.alpha = 1
-                self.intensityCircleView.transform = .identity
-                self.actionSheetDimmingBtn.alpha = 0
-                self.intensityCircleView.alpha = 1
-                self.actionSheet.layoutIfNeeded()
-                self.view.layoutIfNeeded()
-            }
-            
-            startBtn.setTitle(L("session.start"), for: .normal)
+            stopSession()
         }
     }
     
@@ -178,6 +119,74 @@ final class MainVC: UIViewController, CAAnimationDelegate {
     
     func sliderDidChange(_ slider: UISlider) {
         updateColor(for: slider.value.toCGFloat)
+    }
+    
+    fileprivate func prepareForSession() {
+        hasStarted = true
+        
+        UIApplication.shared.isIdleTimerDisabled = false
+        
+        titleLbl.snp.updateConstraints {
+            $0.top.equalToSuperview().inset(-100)
+        }
+        
+        colorPickerImageView.snp.updateConstraints {
+            $0.bottom.equalToSuperview().offset(100)
+        }
+        
+        actionSheet.title = L("session.type.title")
+        actionSheet.leftBtnTitle = L("session.type.eight_mins")
+        actionSheet.rightBtnTitle = L("session.type.twenty_mins")
+        actionSheet.timeSelectedBlock = startSession(_:)
+        actionSheet.snp.updateConstraints {
+            $0.bottom.equalToSuperview().inset(20)
+        }
+        
+        animatePulse()
+        
+        UIView.animate(withDuration: 0.35) {
+            self.startBtn.alpha = 1
+            self.actionSheetDimmingBtn.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+        
+        startBtn.setTitle(nil, for: .normal)
+    }
+    
+    fileprivate func stopSession() {
+        hasStarted = false
+        sessionStartDate = nil
+        
+        if let prev = previousBrightness {
+            UIApplication.shared.isIdleTimerDisabled = true
+            UIScreen.main.brightness = prev
+            previousBrightness = nil
+        }
+        
+        titleLbl.snp.updateConstraints {
+            $0.top.equalToSuperview().offset(24)
+        }
+        
+        colorPickerImageView.snp.updateConstraints {
+            $0.bottom.equalToSuperview().inset(7)
+        }
+        
+        actionSheet.snp.updateConstraints {
+            $0.bottom.equalToSuperview().offset(150)
+        }
+        
+        intensityCircleView.layer.removeAllAnimations()
+        
+        UIView.animate(withDuration: 0.35) {
+            self.startBtn.alpha = 1
+            self.intensityCircleView.transform = .identity
+            self.actionSheetDimmingBtn.alpha = 0
+            self.intensityCircleView.alpha = 1
+            self.actionSheet.layoutIfNeeded()
+            self.view.layoutIfNeeded()
+        }
+        
+        startBtn.setTitle(L("session.start"), for: .normal)
     }
     
     func tappedSlider(_ sender: UITapGestureRecognizer) {
@@ -226,6 +235,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
             self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
             self.startBtn.alpha = 0
         }, completion: { finished in
+            self.sessionStartDate = Date()
             self.launchCycle(seconds: 5)
         })
     }
@@ -272,10 +282,6 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         elapsedTime += seconds
     }
     
-    private func stopSession() {
-        tappedStartBtn(startBtn)
-    }
-    
     private func updateColor(for progress: CGFloat) {
         let p = min(progress, 0.97)
         let point = CGPoint(x: colorPickerImageView.bounds.width * p,
@@ -303,7 +309,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
             }
             self.launchCycle(seconds: cycleLength)
         } else {
-            tappedStartBtn(startBtn)
+            stopSession()
         }
     }
     
