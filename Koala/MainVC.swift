@@ -31,6 +31,7 @@ final class MainVC: UIViewController {
     private var sessionDimmingBtn: UIButton!
     private var sessionStartDate: Date?
     private var choosenTime: TimeInterval = 8 * 60
+    private var elapsedTime: TimeInterval = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -218,26 +219,42 @@ final class MainVC: UIViewController {
             tappedStartBtn(startBtn)
             return
         }
-        let inspiration = seconds * 0.40
+        
+        let breathIn = seconds * 0.40
+        let breathOut = seconds - breathIn
         
         let inspirationAnim = CABasicAnimation(keyPath: "transform.scale")
-        inspirationAnim.duration = inspiration
+        inspirationAnim.duration = breathIn
         inspirationAnim.fromValue = 0.3
         inspirationAnim.toValue = 1
-        inspirationAnim.isRemovedOnCompletion = false
         inspirationAnim.beginTime = 0
+        inspirationAnim.isRemovedOnCompletion = false
+        
+        let fadeInAnim = CABasicAnimation(keyPath: "opacity")
+        fadeInAnim.duration = breathIn
+        fadeInAnim.fromValue = 0.2
+        fadeInAnim.toValue = 1
+        fadeInAnim.beginTime = 0
+        fadeInAnim.isRemovedOnCompletion = false
         
         let expirationAnim = CABasicAnimation(keyPath: "transform.scale")
-        expirationAnim.duration = seconds - inspiration
+        expirationAnim.duration = breathOut
         expirationAnim.fromValue = 1
         expirationAnim.toValue = 0.3
-        expirationAnim.beginTime = CFTimeInterval(inspiration)
+        expirationAnim.beginTime = CFTimeInterval(breathIn)
         expirationAnim.isRemovedOnCompletion = false
+        
+        let fadeOutAnim = CABasicAnimation(keyPath: "opacity")
+        fadeOutAnim.duration = breathOut
+        fadeOutAnim.fromValue = 1
+        fadeOutAnim.toValue = 0.2
+        fadeOutAnim.beginTime = CFTimeInterval(breathIn)
+        fadeOutAnim.isRemovedOnCompletion = false
         
         let group = CAAnimationGroup()
         group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         group.duration = seconds
-        group.animations = [inspirationAnim, expirationAnim]
+        group.animations = [inspirationAnim, expirationAnim, fadeInAnim, fadeOutAnim]
         group.repeatCount = .infinity
         intensityCircleView.layer.add(group, forKey: "Scale")
     }
