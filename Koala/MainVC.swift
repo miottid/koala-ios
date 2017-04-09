@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import SwiftHelpers
 
-final class MainVC: UIViewController {
+final class MainVC: UIViewController, CAAnimationDelegate {
     
     private var titleLbl: UILabel!
     private var intensityCircleView: IntensityCircleView!
@@ -29,7 +29,6 @@ final class MainVC: UIViewController {
     private var actionSheet: KoalaActionSheet!
     
     private var sessionDimmingBtn: UIButton!
-    private var sessionStartDate: Date?
     private var choosenTime: TimeInterval = 8 * 60
     private var elapsedTime: TimeInterval = 0
 
@@ -226,18 +225,11 @@ final class MainVC: UIViewController {
             self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
             self.startBtn.alpha = 0
         }, completion: { finished in
-            self.sessionStartDate = Date()
-            self.launchCycle(seconds: 8)
+            self.launchCycle(seconds: 5)
         })
     }
     
     fileprivate func launchCycle(seconds: TimeInterval) {
-        guard let startDate = self.sessionStartDate, startDate.timeIntervalSinceNow < choosenTime else {
-            sessionStartDate = nil
-            tappedStartBtn(startBtn)
-            return
-        }
-        
         let breathIn = seconds * 0.40
         let breathOut = seconds - breathIn
         
@@ -273,8 +265,10 @@ final class MainVC: UIViewController {
         group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         group.duration = seconds
         group.animations = [inspirationAnim, expirationAnim, fadeInAnim, fadeOutAnim]
-        group.repeatCount = .infinity
+        group.delegate = self
         intensityCircleView.layer.add(group, forKey: "breathes")
+        
+        elapsedTime += seconds
     }
     
     private func stopSession() {
@@ -287,6 +281,26 @@ final class MainVC: UIViewController {
                             y: colorPickerImageView.bounds.height / 2.0)
         let color = colorPickerImageView.pickColor(at: point)
         intensityCircleView.color = color
+    }
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        /// Here calculate the next cycle or stop it
+        if elapsedTime < choosenTime {
+            let percent = elapsedTime / choosenTime
+            let cycleLength: TimeInterval
+            if percent < 0.25 {
+                cycleLength = 5
+            } else if percent < 0.50 {
+                cycleLength = 8
+            } else if percent < 0.75 {
+                cycleLength = 11
+            } else {
+                cycleLength = 14
+            }
+            self.launchCycle(seconds: cycleLength)
+        } else {
+            elapsedTime = .infinity
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -343,4 +357,3 @@ final class MainVC: UIViewController {
         }
     }
 }
-

@@ -67,7 +67,7 @@ final class InstructionVC: UIViewController {
         attr.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 24, weight: UIFontWeightBold), range: range)
         attr.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: range)
         let paragraph = NSMutableParagraphStyle()
-        paragraph.lineHeightMultiple = 1.35
+        paragraph.lineHeightMultiple = 1.2
         attr.addAttribute(NSParagraphStyleAttributeName, value: paragraph, range: range)
         headlineLbl.attributedText = attr
     }
