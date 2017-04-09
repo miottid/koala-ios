@@ -86,6 +86,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2EA95AC5A29E803BD7658C32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58AE54D51E97FC4400B6DC2F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +232,7 @@
 			buildConfigurationList = 585C8C201E9A70A20000C63D /* Build configuration list for PBXNativeTarget "Stickers" */;
 			buildPhases = (
 				585C8C131E9A70A20000C63D /* Resources */,
+				2EA95AC5A29E803BD7658C32 /* Frameworks */,
 			);
 			buildRules = (
 			);
