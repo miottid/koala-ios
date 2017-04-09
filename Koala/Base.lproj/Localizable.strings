@@ -14,7 +14,7 @@
 "rate.go_appstore" = "Merci ! Aidez Koala en lui laissant 5 étoiles sur l’Apple App Store";
 "share.subject" = "Découvre l'application Koala";
 "share.message" = "Je te partage cette application, laisse toi bercer par Koala : ";
-"footer.sleep_well" = "Bonne nuit de la part de Gilles le koala";
+"footer.sleep_well" = "Bonne nuit de la part de Gilles le koala.";
 "footer.made_with_love" = "Fait avec amour par Muxu.Muxu";
 // Session
 "session.stop" = "Arrêter";

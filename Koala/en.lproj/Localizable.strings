@@ -38,7 +38,7 @@
 "rate.go_appstore" = "Thank you very much! Please help Koala by giving it 5 stars on the Apple App Store";
 "share.subject" = "Discover Koala app";
 "share.message" = "I'm sharing this app with you, let yourself be gently soothed by Koala:";
-"footer.sleep_well" = "Goodnight from Gilles the koala";
+"footer.sleep_well" = "Goodnight from Gilles the koala.";
 "footer.made_with_love" = "Made with love by Muxu.Muxu";
 // Session
 "session.stop" = "Stop";
@@ -49,7 +49,9 @@
 "instruction.title" = "How to";
 "instruction.headline" = "Let yourself be gently soothed by Koala";
 "instruction.content" = "1. Start Koala
-2. Koala's light spread through your room
+2. Koala's light spread through your roof
 3. Breathe in time to the rythm of the light
+3a. Inhale when the light intensifies
+3b. Exhale when the light decreases
 4. Your breathing slowly reduces
 5. You fall asleep and Koala stops by itself";
