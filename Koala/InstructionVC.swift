@@ -11,6 +11,8 @@ import SwiftHelpers
 
 final class InstructionVC: UIViewController {
     
+    private var scrollView: UIScrollView!
+    private var containerScrollView: UIView!
     private var heroImageView: UIImageView!
     private var lightImageView: UIImageView!
     private var screenImageView: UIImageView!
@@ -28,26 +30,31 @@ final class InstructionVC: UIViewController {
 
         let closeBtn = UIBarButtonItem(title: L("settings.close"), style: .done, target: self, action: #selector(tappedCloseBtn(_:)))
         navigationItem.rightBarButtonItem = closeBtn
+        
+        scrollView = UIScrollView()
+        containerScrollView = UIView()
 
         heroImageView = UIImageView(image: #imageLiteral(resourceName: "instructions_illus"))
         blurImageView = UIImageView(image: #imageLiteral(resourceName: "instructions_illus-blur"))
         screenImageView = UIImageView(image: #imageLiteral(resourceName: "instructions_illus-screen"))
         lightImageView = UIImageView(image: #imageLiteral(resourceName: "instructions_illus-light"))
 
-        view.addSubview(heroImageView)
-        view.addSubview(blurImageView)
-        view.addSubview(screenImageView)
-        view.addSubview(lightImageView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(containerScrollView)
+        containerScrollView.addSubview(heroImageView)
+        containerScrollView.addSubview(blurImageView)
+        containerScrollView.addSubview(screenImageView)
+        containerScrollView.addSubview(lightImageView)
 
         headlineLbl = UILabel()
         headlineLbl.numberOfLines = 0
         configureHeadlineText()
-        view.addSubview(headlineLbl)
+        containerScrollView.addSubview(headlineLbl)
 
         instructionContentLbl = UILabel()
         instructionContentLbl.numberOfLines = 0
         configureContentText()
-        view.addSubview(instructionContentLbl)
+        containerScrollView.addSubview(instructionContentLbl)
 
         configureLayoutConstraints()
     }
@@ -78,7 +85,7 @@ final class InstructionVC: UIViewController {
         attr.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 16), range: range)
         attr.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: range)
         let paragraph = NSMutableParagraphStyle()
-        paragraph.lineHeightMultiple = 1.25
+        paragraph.lineHeightMultiple = 1.15
         attr.addAttribute(NSParagraphStyleAttributeName, value: paragraph, range: range)
         instructionContentLbl.attributedText = attr
     }
@@ -102,6 +109,13 @@ final class InstructionVC: UIViewController {
     }
     
     private func configureLayoutConstraints() {
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        containerScrollView.snp.makeConstraints {
+            $0.edges.equalTo(scrollView)
+            $0.width.equalTo(view)
+        }
         heroImageView.snp.makeConstraints {
             $0.left.top.right.equalToSuperview()
             $0.height.equalTo(heroImageView.snp.width).multipliedBy(0.9)
@@ -124,6 +138,7 @@ final class InstructionVC: UIViewController {
             $0.top.equalTo(headlineLbl.snp.bottom).offset(9)
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(20)
         }
     }
 }
