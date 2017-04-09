@@ -203,8 +203,9 @@ final class MainVC: UIViewController {
         
         intensityCircleView.layer.removeAllAnimations()
         
-        UIView.animate(withDuration: 0.35, animations: {
+        UIView.animate(withDuration: 1.0, animations: {
             self.actionSheetDimmingBtn.alpha = 0
+            self.intensityCircleView.alpha = 0.2
             self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
             self.startBtn.alpha = 0
         }, completion: { finished in
