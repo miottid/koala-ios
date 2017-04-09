@@ -84,7 +84,6 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         actionSheet = KoalaActionSheet()
         view.addSubview(actionSheet)
         sessionDimmingBtn = UIButton(type: .system)
-        sessionDimmingBtn.isUserInteractionEnabled = false
         sessionDimmingBtn.addTarget(self, action: #selector(tappedSessionDimmingBtn(_:)), for: .touchUpInside)
         view.addSubview(sessionDimmingBtn)
         configureLayoutConstraints()
@@ -116,7 +115,6 @@ final class MainVC: UIViewController, CAAnimationDelegate {
     }
     
     func tappedStartBtn(_ sender: UIButton? = nil) {
-        sessionDimmingBtn.isUserInteractionEnabled = false
         if !hasStarted {
             prepareForSession()
         } else {
@@ -196,6 +194,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
             self.startBtn.alpha = 1
             self.intensityCircleView.transform = .identity
             self.actionSheetDimmingBtn.alpha = 0
+            self.sessionDimmingBtn.alpha = 0
             self.intensityCircleView.alpha = 1
             self.actionSheet.layoutIfNeeded()
             self.view.layoutIfNeeded()
@@ -236,8 +235,6 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         previousBrightness = UIScreen.main.brightness
         UIScreen.main.brightness = 1
         
-        sessionDimmingBtn.isUserInteractionEnabled = true
-        
         actionSheet.snp.updateConstraints {
             $0.bottom.equalToSuperview().offset(150)
         }
@@ -250,6 +247,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
             self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
             self.startBtn.alpha = 0
         }, completion: { finished in
+            self.sessionDimmingBtn.alpha = 1
             self.sessionStartDate = Date()
             self.launchCycle(seconds: 5)
         })
