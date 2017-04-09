@@ -51,5 +51,7 @@
 "instruction.content" = "1. Je démarre Koala
 2. La lumière de Koala se diffuse au plafond
 3. Je respire en rythme avec la lumière
-4. Ma respiration se réduit progressivement
-5. Je m’endors et Koala s’éteint tout seul";
+3a. J'inspire quand la lumière s'intensifie
+4a. J'expire quand la lumière diminue
+5. Ma respiration se réduit progressivement
+6. Je m’endors et Koala s’éteint tout seul";

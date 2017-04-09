@@ -96,7 +96,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         if !alreadyLaunched {
             defaults.set(true, forKey: "alreadyLaunched")
             defaults.synchronize()
-            tappedSettingsBtn()
+            tappedHelpBtn()
         }
     }
     
