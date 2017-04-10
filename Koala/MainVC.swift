@@ -298,6 +298,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         group.duration = seconds
         group.animations = [inspirationAnim, expirationAnim, fadeInAnim, fadeOutAnim]
         group.delegate = self
+        group.beginTime = CACurrentMediaTime() + 0.5
         intensityCircleView.layer.add(group, forKey: "breathes")
         
         elapsedTime += seconds
