@@ -13,10 +13,10 @@ import UserNotifications
 import UserNotificationsUI
 
 private struct CycleLength {
-    static let firstQuarter: TimeInterval = 10
-    static let secondQuarter: TimeInterval = 16
-    static let thirdQuarter: TimeInterval = 22
-    static let lastQuarter: TimeInterval = 28
+    static let firstQuarter: TimeInterval = 5
+    static let secondQuarter: TimeInterval = 8
+    static let thirdQuarter: TimeInterval = 11
+    static let lastQuarter: TimeInterval = 14
 }
 
 final class MainVC: UIViewController, CAAnimationDelegate {
