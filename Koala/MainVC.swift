@@ -230,7 +230,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         }) { finished in
             let scaleAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
             scaleAnimation.duration = 1.5
-            scaleAnimation.repeatCount = 100
+            scaleAnimation.repeatCount = .infinity
             scaleAnimation.autoreverses = true
             scaleAnimation.fromValue = 0.7;
             scaleAnimation.toValue = 0.6;
