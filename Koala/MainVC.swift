@@ -91,6 +91,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         actionSheet = KoalaActionSheet()
         view.addSubview(actionSheet)
         sessionDimmingBtn = UIButton(type: .system)
+        sessionDimmingBtn.alpha = 0
         sessionDimmingBtn.addTarget(self, action: #selector(tappedSessionDimmingBtn(_:)), for: .touchUpInside)
         view.addSubview(sessionDimmingBtn)
         configureLayoutConstraints()
