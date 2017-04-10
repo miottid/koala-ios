@@ -12,6 +12,13 @@ import SwiftHelpers
 import UserNotifications
 import UserNotificationsUI
 
+private struct CycleLength {
+    static let firstQuarter: TimeInterval = 10
+    static let secondQuarter: TimeInterval = 16
+    static let thirdQuarter: TimeInterval = 22
+    static let lastQuarter: TimeInterval = 28
+}
+
 final class MainVC: UIViewController, CAAnimationDelegate {
     
     private var titleLbl: UILabel!
@@ -249,7 +256,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         }, completion: { finished in
             self.sessionDimmingBtn.alpha = 1
             self.sessionStartDate = Date()
-            self.launchCycle(seconds: 5)
+            self.launchCycle(seconds: CycleLength.firstQuarter)
         })
     }
     
@@ -312,13 +319,13 @@ final class MainVC: UIViewController, CAAnimationDelegate {
             let percent = elapsedTime / choosenTime
             let cycleLength: TimeInterval
             if percent < 0.25 {
-                cycleLength = 5
+                cycleLength = CycleLength.firstQuarter
             } else if percent < 0.50 {
-                cycleLength = 8
+                cycleLength = CycleLength.secondQuarter
             } else if percent < 0.75 {
-                cycleLength = 11
+                cycleLength = CycleLength.thirdQuarter
             } else {
-                cycleLength = 14
+                cycleLength = CycleLength.lastQuarter
             }
             self.launchCycle(seconds: cycleLength)
         } else {
