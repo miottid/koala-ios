@@ -261,7 +261,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
     }
     
     fileprivate func launchCycle(seconds: TimeInterval) {
-        let breathIn = seconds * 0.40
+        let breathIn = seconds * 0.60
         let breathOut = seconds - breathIn
         
         let inspirationAnim = CABasicAnimation(keyPath: "transform.scale")
