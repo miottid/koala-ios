@@ -145,7 +145,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
     fileprivate func prepareForSession() {
         hasStarted = true
         
-        UIApplication.shared.isIdleTimerDisabled = false
+        UIApplication.shared.isIdleTimerDisabled = true
         
         titleLbl.snp.updateConstraints {
             $0.top.equalToSuperview().inset(-100)
@@ -178,8 +178,9 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         hasStarted = false
         sessionStartDate = nil
         
+        UIApplication.shared.isIdleTimerDisabled = false
+        
         if let prev = previousBrightness {
-            UIApplication.shared.isIdleTimerDisabled = true
             UIScreen.main.brightness = prev
             previousBrightness = nil
         }
