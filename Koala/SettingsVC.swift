@@ -122,7 +122,7 @@ final class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDele
         let yesAction = UIAlertAction(title: L("yes"), style: .default) { action in
             let innerAlert = UIAlertController(title: L("rate.go_appstore"), message: nil, preferredStyle: .alert)
             let yesAction = UIAlertAction(title: L("yes"), style: .default) { action in
-                if let url = URL(string: "https://appstore.com/muxumuxu/koala") {
+                if let url = URL(string: "https://itunes.apple.com/us/app/koala-to-sleep-better-and-faster/id1224807364?l=fr&ls=1&mt=8") {
                     UIApplication.shared.open(url, options: [:])
                 }
             }
@@ -143,7 +143,7 @@ final class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDele
     
     private func shareApp() {
         var activities: [Any] = [L("share.message")]
-        if let link = URL(string: "http://appstore.com/muxumuxu/koala") {
+        if let link = URL(string: "https://itunes.apple.com/us/app/koala-to-sleep-better-and-faster/id1224807364?l=fr&ls=1&mt=8") {
             activities.append(link)
         }
         let activity = UIActivityViewController(activityItems: activities, applicationActivities: nil)
