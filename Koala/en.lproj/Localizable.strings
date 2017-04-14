@@ -10,13 +10,44 @@
 "settings.close" = "Close";
 "session.start" = "Start";
 "session.type.title" = "Choose duration";
-"session.stop" = "Stop";
 "settings" = "Settings";
 "settings.rate" = "Do you like Koala?";
-"instruction.content" = "1. Start Koala\n2. Choose the session duration\n3. Koala's light spreads on the ceiling\n4. Breathe in time to the rythm of the light\n     a. Inhale when the light intensifies\n     b. Exhale when the light decreases\n5. Your breathing slowly reduces\n6. You fall asleep and Koala stops by itself";
+"instruction.content" = "1. Turn off the lights and start Koala\n2. Choose the session duration\n3. Koala's light spreads on the ceiling\n4. Breathe in time to the rythm of the light\n     a. Inhale when the light intensifies\n     b. Exhale when the light decreases\n5. Your breathing slowly reduces\n6. You fall asleep and Koala stops by itself";
 "session.type.eight_mins" = "8 min";
 "rate.go_appstore" = "Thank you very much! Please help Koala by giving it 5 stars on the Apple App Store";
 "settings.contact_us" = "Contact us";
 "share.message" = "I'm sharing this app with you, let yourself be gently soothed by Koala:";
 "contactus.subject" = "About Koala";
+"share.subject" = "Discover Koala app";// AUTO-GENERATED
+// Settings
+"settings" = "Settings";
+"help" = "How to";
+"yes" = "Yes";
+"no" = "No";
+// Settings
+"settings.close" = "Close";
+"session.start" = "Start";
+"settings.contact_us" = "Contact us";
+"settings.rate" = "Do you like Koala?";
+"settings.share" = "Share the app";
+"contactus.subject" = "About Koala";
+"rate.go_appstore" = "Thank you very much! Please help Koala by giving it 5 stars on the Apple App Store";
 "share.subject" = "Discover Koala app";
+"share.message" = "I'm sharing this app with you, let yourself be gently soothed by Koala:";
+"footer.sleep_well" = "Goodnight from Gilles the koala.";
+"footer.made_with_love" = "Made with love by Muxu.Muxu";
+// Session
+"session.type.title" = "Choose duration";
+"session.type.eight_mins" = "8 min";
+"session.type.twenty_mins" = "20 min";
+// Instructions
+"instruction.title" = "How to";
+"instruction.headline" = "Let yourself be gently soothed by Koala";
+"instruction.content" = "1. Turn off the lights and start Koala
+2. Choose the session duration
+3. Koala's light spreads on the ceiling
+4. Breathe in time to the rythm of the light
+     a. Inhale when the light intensifies
+     b. Exhale when the light decreases
+5. Your breathing slowly reduces
+6. You fall asleep and Koala stops by itself";

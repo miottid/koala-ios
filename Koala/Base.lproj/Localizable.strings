@@ -17,17 +17,16 @@
 "footer.sleep_well" = "Bonne nuit de la part de Gilles le koala.";
 "footer.made_with_love" = "Fait avec amour par Muxu.Muxu";
 // Session
-"session.stop" = "Arrêter";
 "session.type.title" = "Choisir une durée";
 "session.type.eight_mins" = "8 min";
 "session.type.twenty_mins" = "20 min";
 // Instructions
 "instruction.title" = "Instructions";
 "instruction.headline" = "Laissez-vous bercer par Koala";
-"instruction.content" = "1. Je démarre Koala
+"instruction.content" = "1. J'éteins ma lumière et je démarre Koala
 2. Je choisis la durée de ma session
 3. La lumière de Koala se diffuse au plafond
-4. Je respire en rythme avec la lumière
+4. Je respire en rythme avec elle
      a. J'inspire quand la lumière s'intensifie
      b. J'expire quand la lumière diminue
 5. Ma respiration se réduit progressivement
