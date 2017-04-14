@@ -596,6 +596,7 @@
 				585C8C1F1E9A70A20000C63D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58AE54D31E97FC4400B6DC2F /* Build configuration list for PBXProject "Koala" */ = {
 			isa = XCConfigurationList;
