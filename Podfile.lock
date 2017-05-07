@@ -1,4 +1,5 @@
 PODS:
+  - lottie-ios (1.5.1)
   - SnapKit (3.2.0)
   - SwiftHelpers (5.0.1):
     - SwiftHelpers/Basic (= 5.0.1)
@@ -15,6 +16,7 @@ PODS:
   - SwiftHelpers/UI (5.0.1)
 
 DEPENDENCIES:
+  - lottie-ios
   - SnapKit
   - SwiftHelpers (from `https://github.com/dmiotti/SwiftHelpers`)
 
@@ -28,9 +30,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/dmiotti/SwiftHelpers
 
 SPEC CHECKSUMS:
+  lottie-ios: f680a7c4cb7a567ecf258fde0f967913aff111b8
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftHelpers: 346de9223bfde9b2011c866af3dcf3e9d70d9c41
 
-PODFILE CHECKSUM: fb8e831757d6077eb664d2914b41d45de1cc8212
+PODFILE CHECKSUM: 5d24020b06057025b83e5e84964840019f9132a4
 
 COCOAPODS: 1.2.1

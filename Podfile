@@ -5,4 +5,5 @@ use_frameworks!
 target 'Koala' do
 	pod 'SnapKit'
 	pod 'SwiftHelpers', :git => 'https://github.com/dmiotti/SwiftHelpers'
+    pod 'lottie-ios'
 end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5808E3841EBF3A3500F7970B /* Expiration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5808E3821EBF3A3500F7970B /* Expiration.json */; };
+		5808E3851EBF3A3500F7970B /* Inspiration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5808E3831EBF3A3500F7970B /* Inspiration.json */; };
 		580AAE321E9813170083D0CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 580AAE341E9813170083D0CC /* Localizable.strings */; };
 		580AAE391E981FBF0083D0CC /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AAE381E981FBF0083D0CC /* SettingsCell.swift */; };
 		580AAE3B1E9824EC0083D0CC /* LightNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AAE3A1E9824EC0083D0CC /* LightNC.swift */; };
@@ -55,6 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5808E3821EBF3A3500F7970B /* Expiration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Expiration.json; sourceTree = "<group>"; };
+		5808E3831EBF3A3500F7970B /* Inspiration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Inspiration.json; sourceTree = "<group>"; };
 		580AAE2E1E98116F0083D0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		580AAE331E9813170083D0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		580AAE351E9813180083D0CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -104,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5808E3811EBF3A3500F7970B /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				5808E3821EBF3A3500F7970B /* Expiration.json */,
+				5808E3831EBF3A3500F7970B /* Inspiration.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		580AAE2F1E9812B20083D0CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +200,7 @@
 				58AE54DB1E97FC4400B6DC2F /* AppDelegate.swift */,
 				580AAE2F1E9812B20083D0CC /* Controllers */,
 				58AE54F41E98097900B6DC2F /* Fonts */,
+				5808E3811EBF3A3500F7970B /* Animations */,
 				58AE54E21E97FC4400B6DC2F /* Assets.xcassets */,
 				58AE54E41E97FC4400B6DC2F /* LaunchScreen.storyboard */,
 				58AE54E71E97FC4400B6DC2F /* Info.plist */,
@@ -322,7 +336,9 @@
 			files = (
 				58AE54E61E97FC4400B6DC2F /* LaunchScreen.storyboard in Resources */,
 				58AE54FB1E98097900B6DC2F /* Poppins-Light.ttf in Resources */,
+				5808E3841EBF3A3500F7970B /* Expiration.json in Resources */,
 				58AE54FD1E98097900B6DC2F /* Poppins-Regular.ttf in Resources */,
+				5808E3851EBF3A3500F7970B /* Inspiration.json in Resources */,
 				58AE54E31E97FC4400B6DC2F /* Assets.xcassets in Resources */,
 				58AE54FC1E98097900B6DC2F /* Poppins-Medium.ttf in Resources */,
 				580AAE321E9813170083D0CC /* Localizable.strings in Resources */,

@@ -11,6 +11,7 @@ import SnapKit
 import SwiftHelpers
 import UserNotifications
 import UserNotificationsUI
+import Lottie
 
 private struct CycleLength {
     static let firstQuarter: TimeInterval = 5
@@ -51,6 +52,7 @@ final class MainVC: UIViewController, CAAnimationDelegate {
         titleLbl.text = "koala"
         view.addSubview(titleLbl)
         intensityCircleView = IntensityCircleView()
+        intensityCircleView.isHidden = true
         view.addSubview(intensityCircleView)
         settingsBtn = UIButton(type: .system)
         settingsBtn.contentEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -248,18 +250,48 @@ final class MainVC: UIViewController, CAAnimationDelegate {
             $0.bottom.equalToSuperview().offset(150)
         }
         
-        intensityCircleView.layer.removeAllAnimations()
+        self.playInspirationAnimation()
         
-        UIView.animate(withDuration: 1.0, animations: {
-            self.actionSheetDimmingBtn.alpha = 0
-            self.intensityCircleView.alpha = 0.2
-            self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
-            self.startBtn.alpha = 0
-        }, completion: { finished in
-            self.sessionDimmingBtn.alpha = 1
-            self.sessionStartDate = Date()
-            self.launchCycle(seconds: CycleLength.firstQuarter)
-        })
+//        intensityCircleView.layer.removeAllAnimations()
+//        
+//        UIView.animate(withDuration: 1.0, animations: {
+//            self.actionSheetDimmingBtn.alpha = 0
+//            self.intensityCircleView.alpha = 0.2
+//            self.intensityCircleView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
+//            self.startBtn.alpha = 0
+//        }, completion: { finished in
+//            self.sessionDimmingBtn.alpha = 1
+//            self.sessionStartDate = Date()
+//            self.launchCycle(seconds: CycleLength.firstQuarter)
+//        })
+    }
+    
+    private func playInspirationAnimation() {
+        if let inspirationAnimation = LOTAnimationView(name: "Inspiration") {
+            view.addSubview(inspirationAnimation)
+            inspirationAnimation.snp.makeConstraints {
+                $0.centerX.equalToSuperview()
+                $0.centerY.equalToSuperview()
+            }
+            inspirationAnimation.play(completion: { (finished) in
+                inspirationAnimation.removeFromSuperview()
+                self.playExpirationAnimation()
+            })
+        }
+    }
+    
+    private func playExpirationAnimation() {
+        if let expirationAnimation = LOTAnimationView(name: "Expiration") {
+            view.addSubview(expirationAnimation)
+            expirationAnimation.snp.makeConstraints {
+                $0.centerX.equalToSuperview()
+                $0.centerY.equalToSuperview()
+            }
+            
+            expirationAnimation.play(completion: { (finished) in
+                self.playInspirationAnimation()
+            })
+        }
     }
     
     fileprivate func launchCycle(seconds: TimeInterval) {
