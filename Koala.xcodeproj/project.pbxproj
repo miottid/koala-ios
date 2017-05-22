@@ -80,6 +80,8 @@
 		58AE54F81E98097900B6DC2F /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		58AE54F91E98097900B6DC2F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		58AE54FF1E9809EF00B6DC2F /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
+		58E0E72F1ED3180E004B0458 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		58E0E7301ED3180E004B0458 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C7E162027FB2807504D0B2B /* Pods_Koala.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Koala.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A727B7E0BF7CB4EBB7558939 /* Pods-Koala.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koala.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koala/Pods-Koala.debug.xcconfig"; sourceTree = "<group>"; };
 		E12A09EF0D5F5724A79C4613 /* Pods-Koala.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koala.release.xcconfig"; path = "Pods/Target Support Files/Pods-Koala/Pods-Koala.release.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				en,
 				Base,
 				fr,
+				tr,
 			);
 			mainGroup = 58AE54CF1E97FC4400B6DC2F;
 			productRefGroup = 58AE54D91E97FC4400B6DC2F /* Products */;
@@ -416,6 +419,7 @@
 				580AAE331E9813170083D0CC /* Base */,
 				580AAE351E9813180083D0CC /* en */,
 				580AAE361E9813190083D0CC /* fr */,
+				58E0E7301ED3180E004B0458 /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -424,6 +428,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				580AAE2E1E98116F0083D0CC /* Base */,
+				58E0E72F1ED3180E004B0458 /* tr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

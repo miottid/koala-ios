@@ -8,7 +8,7 @@ var spreadsheet = Localize.fromGoogleSpreadsheet('1_ybVFNwVsYcsnHlXeL1J0Ls47jsMk
 
 spreadsheet.setKeyCol('key');
 
-var languages = [ 'fr', 'en' ];
+var languages = [ 'fr', 'en', 'tr' ];
 
 languages.forEach(function(lang){
   spreadsheet.save(PROJECT_NAME + "/" + lang + ".lproj" + "/Localizable.strings", {
