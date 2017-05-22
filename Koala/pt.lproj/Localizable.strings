@@ -1,45 +1,21 @@
-"no" = "No";
-"footer.sleep_well" = "Goodnight from Gilles the koala.";
-"footer.made_with_love" = "Made with love by Muxu.Muxu";
-"settings.share" = "Share the app";
-"session.type.twenty_mins" = "20 min";
-"instruction.headline" = "Let yourself be gently soothed by Koala";
-"yes" = "Yes";
-"instruction.title" = "How to";
-"help" = "How to";
-"settings.close" = "Close";
-"session.start" = "Start";
-"session.type.title" = "Choose duration";
-"settings" = "Settings";
-"settings.rate" = "Do you like Koala?";
-"instruction.content" = "1. Turn off the lights and start Koala\n2. Choose the session duration\n3. Koala's light spreads on the ceiling\n4. Breathe in time to the rythm of the light\n     a. Inhale when the light intensifies\n     b. Exhale when the light decreases\n5. Your breathing slowly reduces\n6. You fall asleep and Koala stops by itself";
-"session.type.eight_mins" = "8 min";
-"rate.go_appstore" = "Thank you very much! Please help Koala by giving it 5 stars on the Apple App Store";
-"settings.contact_us" = "Contact us";
-"share.message" = "I'm sharing this app with you, let yourself be gently soothed by Koala:";
-"contactus.subject" = "About Koala";
-"share.subject" = "Discover Koala app";// AUTO-GENERATED
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+"no" = "Não";
+"footer.sleep_well" = "Boa noite de parte de Gilles u Koala";
+"footer.made_with_love" = "Foi feito com amor por Muxu.Muxu";
+"settings.share" = "Partilhar a aplicação";
+"session.type.twenty_mins" = "20 mn";
+"instruction.headline" = "Deixem-se embalar por Koala";
+"yes" = "Sim";
+"instruction.title" = "Instruções";
+"help" = "Instruções";
+"settings.close" = "Fechar";
+"session.start" = "Iniciar u Programa";
+"session.type.title" = "Esculher uma duração";
+"settings" = "Parâmetros";
+"settings.rate" = "Gosta de Koala ?";
+"instruction.content" = "1. Apagar a luz e iniciar Koala\n2. Escolher a duraçãoda sessão\n3. A luz de Koala se difunde no tecto\n4. Respiro en ritmo com ela\n    a. Inspiro quando a luz se intensifica\n    b. Expiro quando a luz diminua\n5. Aminha respiração se reduz progressivamente\n6. Adormeço e Koala apaga-se sozigno";
+"session.type.eight_mins" = "8 mn";
+"rate.go_appstore" = "Muito obrigado ! Ajudem Koala deixando-nos 5 estrelas na Apple App Store";
+"settings.contact_us" = "Nos contactar";
+"share.message" = "Partilho esta aplicação, deixando-se embalar pela aplicação Koala";
+"contactus.subject" = "A proposito de Koala";
+"share.subject" = "Descubra a aplicação Koala";

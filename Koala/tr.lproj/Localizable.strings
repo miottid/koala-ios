@@ -1,45 +1,21 @@
-"no" = "No";
-"footer.sleep_well" = "Goodnight from Gilles the koala.";
-"footer.made_with_love" = "Made with love by Muxu.Muxu";
-"settings.share" = "Share the app";
-"session.type.twenty_mins" = "20 min";
-"instruction.headline" = "Let yourself be gently soothed by Koala";
-"yes" = "Yes";
-"instruction.title" = "How to";
-"help" = "How to";
-"settings.close" = "Close";
-"session.start" = "Start";
-"session.type.title" = "Choose duration";
-"settings" = "Settings";
-"settings.rate" = "Do you like Koala?";
-"instruction.content" = "1. Turn off the lights and start Koala\n2. Choose the session duration\n3. Koala's light spreads on the ceiling\n4. Breathe in time to the rythm of the light\n     a. Inhale when the light intensifies\n     b. Exhale when the light decreases\n5. Your breathing slowly reduces\n6. You fall asleep and Koala stops by itself";
-"session.type.eight_mins" = "8 min";
-"rate.go_appstore" = "Thank you very much! Please help Koala by giving it 5 stars on the Apple App Store";
-"settings.contact_us" = "Contact us";
-"share.message" = "I'm sharing this app with you, let yourself be gently soothed by Koala:";
-"contactus.subject" = "About Koala";
-"share.subject" = "Discover Koala app";// AUTO-GENERATED
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+"no" = "Hayır";
+"footer.sleep_well" = "Koala Gilles ile güzel uykular";
+"footer.made_with_love" = "Muxu.Muxu tarafından sevgiyle hazırlanmıştır";
+"settings.share" = "Uygulamayı paylaş";
+"session.type.twenty_mins" = "20 dk.";
+"instruction.headline" = "Kendinizi usulca Koala'ya bırakın.";
+"yes" = "Evet";
+"instruction.title" = "Kullanma kılavuzu";
+"help" = "Kullanma kılavuzu";
+"settings.close" = "Kapat";
+"session.start" = "Aç";
+"session.type.title" = "Bir süre seç";
+"settings" = "Ayarlar";
+"settings.rate" = "Koala'yı sevdiniz mi?";
+"instruction.content" = "1. Işıkları kapatın ve Koala'yı başlatın.\n2. İstediğiniz süreyi seçin.\n3. Koala'nın ışığı tavana yansır.\n4. Koala'nın ritmine uyarak nefes al\n   a. Işık yoğunlaştıkça nefes al\n   b. Işık azaldıkça nefes ver\n5. Nefesiniz yavaşça ağırlaşır\n6. Siz uykuya dalarken Koala kendi kendine kapanır.";
+"session.type.eight_mins" = "8 dk.";
+"rate.go_appstore" = "Teşekkürler! Lütfen Apple App Sore'da Koala'ya 5 yıldız vererek bize yardımcı olun.";
+"settings.contact_us" = "Bize ulaşın";
+"share.message" = "Koala'yı seninle paylaşıyorum, kendinizi usulca Koala'ya bırakın";
+"contactus.subject" = "Koala hakkında";
+"share.subject" = "Koala'yı keşfedin. ";
